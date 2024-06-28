@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: Você pode listar as nuvens definidas e disponíveis de uma conta específica do Astra. 
+---
+= Liste as nuvens
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode listar as nuvens definidas e disponíveis de uma conta específica do Astra.
+
+
+
+=== 1. Liste as nuvens
+
+Execute a seguinte chamada de API REST para listar as nuvens.
+
+[cols="25,75"]
+|===
+| Método HTTP | Caminho 
+
+
+| OBTER | /accounts/_id/topology/v1/clouds 
+|===
+
+
+===== Curl exemplo: Retorna todos os dados para todas as nuvens
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

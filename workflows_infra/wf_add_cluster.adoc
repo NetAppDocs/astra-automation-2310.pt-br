@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_add_cluster.html 
+keywords:  
+summary: Você pode adicionar um cluster para que ele fique disponível para ser gerenciado pelo Astra. 
+---
+= Adicione um cluster usando credenciais
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode adicionar um cluster para que ele fique disponível para ser gerenciado pelo Astra. A partir do lançamento do Astra 22,11, você pode adicionar um cluster com Astra Control Center e Astra Control Service.
+
+
+NOTE: A adição de um cluster não é necessária ao usar um serviço Kubernetes de um dos principais fornecedores de nuvem (AKS, EKS, GKE).
+
+
+
+=== 1. Obtenha o arquivo kubeconfig
+
+Você precisa obter uma cópia do arquivo *kubconfig* do administrador ou serviço do Kubernetes.
+
+
+
+=== 2. Prepare o arquivo kubeconfig
+
+Antes de usar o arquivo *kubeconfig*, você deve executar as seguintes operações:
+
+.Converter arquivo do formato YAML para JSON
+Se você receber o arquivo kubeconfig formatado como YAML, você precisará convertê-lo para JSON.
+
+.Codificar JSON em base64
+Você deve codificar o arquivo JSON em base64.
+
+.Exemplo
+Aqui está um exemplo de conversão do arquivo kubeconfig de YAML para JSON e depois codificá-lo em base64:
+
+`yq -o=json ~/.kube/config | base64`
+
+
+
+=== 3. Selecione a nuvem
+
+Execute o fluxo de trabalho link:../workflows_infra/wf_list_clouds.html["Liste as nuvens"] e selecione a nuvem em que o cluster será adicionado.
+
+
+NOTE: A única nuvem que você pode selecionar é a nuvem *privada*.
+
+
+
+=== 4. Crie uma credencial
+
+Execute a seguinte chamada de API REST para criar uma credencial usando o arquivo kubeconfig.
+
+[cols="25,75"]
+|===
+| Método HTTP | Caminho 
+
+
+| POST | /accounts/_id/core/v1/credentials 
+|===
+
+
+===== Exemplo de entrada JSON
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-credential",
+  "version" : "1.1",
+  "name" : "Cloud One",
+  "keyType" : "kubeconfig",
+  "keyStore" : {
+    "base64": encoded_kubeconfig
+  },
+  "valid" : "true"
+}
+----
+
+
+===== Curl exemplo
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+=== 5. Adicione o cluster
+
+Execute a seguinte chamada de API REST para adicionar o cluster à nuvem. O valor do `credentialID` campo de entrada é obtido a partir da chamada API REST na etapa anterior.
+
+[cols="25,75"]
+|===
+| Método HTTP | Caminho 
+
+
+| POST | /accounts//topology/v1/clouds/ /cloud_id/clusters 
+|===
+
+
+===== Exemplo de entrada JSON
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-cluster",
+  "version" : "1.1",
+  "credentialID": credential_id
+}
+----
+
+
+===== Curl exemplo
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
