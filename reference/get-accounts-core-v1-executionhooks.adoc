@@ -1,0 +1,732 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-executionhooks.html 
+summary: Liste todos os ganchos de execução 
+---
+= Liste todos os ganchos de execução
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| incluir | string | consulta | Falso  a| 
+Indica quais campos devem ser retornados ao listar uma coleção.
+
+Exemplos de URL: "include=id", "include=id,name"
+
+Exemplos OpenAPI: "id"
+
+
+
+| limite | string | consulta | Falso  a| 
+Indica o número máximo de recursos a serem retornados ao listar uma coleção.
+
+Exemplos de URL: "limit=2"
+
+Exemplos OpenAPI: "2"
+
+
+
+| filtro | string | consulta | Falso  a| 
+Indica quais campos devem ser correspondidos para retornar um recurso ao listar uma coleção.
+
+Os operadores suportados são:
+
+* eq - Igualdade
+* lt/gt - Menor que/Maior que
+* lte/gte - Menor ou igual a/Maior ou igual a
+
+
+Exemplo de URL: "filter=field%20eq%20%27value%27"
+
+Exemplos OpenAPI: "campo eq 'valor'"
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| itens | array[Qualquer um de: link:#executionHook_1_3_get_response_body["executionHook_1.3_get_response_body"], array[]] | Verdadeiro  a| 
+
+
+
+| metadados | link:#type_astra_metadata_list["type_astra_metadata_list"] | Verdadeiro  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-executionHooks",
+  "version": "1.3",
+  "items": [
+    {
+      "type": "application/astra-executionHook",
+      "version": "1.1",
+      "id": "4c64792c-806b-4457-938d-8e325a37c593",
+      "name": "Payroll",
+      "hookType": "custom",
+      "matchingCriteria": [
+        {
+          "type": "containerImage",
+          "value": "payroll"
+        },
+        {
+          "type": "podName",
+          "value": "^payroll-master"
+        }
+      ],
+      "action": "snapshot",
+      "stage": "pre",
+      "hookSourceID": "50e89023-ba84-435d-bb47-1833f4c250ff",
+      "arguments": [
+        "freeze"
+      ],
+      "appID": "7be5ae7c-151d-4230-ac39-ac1d0b33c2a9",
+      "enabled": "true",
+      "description": "Payroll production hook",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    },
+    {
+      "type": "application/astra-executionHook",
+      "version": "1.1",
+      "id": "6659892c-c621-44e8-a0bb-8dbdf378a2dd",
+      "name": "Order Processing",
+      "hookType": "custom",
+      "matchingCriteria": [
+        {
+          "type": "containerName",
+          "value": "^order-processing$"
+        },
+        {
+          "type": "podLabel",
+          "value": "^app=master$|^app=data$"
+        }
+      ],
+      "action": "snapshot",
+      "stage": "pre",
+      "hookSourceID": "63f4d6fd-b7f0-4eaa-9890-0b11123604b1",
+      "arguments": [
+        "freeze"
+      ],
+      "appID": "7be5ae7c-151d-4230-ac39-ac1d0b33c2a9",
+      "enabled": "true",
+      "description": "Order processing hook",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    },
+    {
+      "type": "application/astra-executionHook",
+      "version": "1.1",
+      "id": "6659892c-c621-44e8-a0bb-8dbdf378a2dd",
+      "name": "NetApp Postgres Hook",
+      "hookType": "netapp",
+      "matchingCriteria": [
+        {
+          "type": "podName",
+          "value": "^postgres"
+        },
+        {
+          "type": "containerImage",
+          "value": "3.8"
+        }
+      ],
+      "action": "snapshot",
+      "stage": "pre",
+      "hookSourceID": "3601ed09-1a74-4156-a1bd-9cb7144bac0e",
+      "arguments": [
+        "freeze"
+      ],
+      "enabled": "true",
+      "description": "Order processing hook",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    },
+    {
+      "type": "application/astra-executionHook",
+      "version": "1.1",
+      "id": "6659892c-c621-44e8-a0bb-8dbdf378a2dd",
+      "name": "Redis Hook",
+      "hookType": "custom",
+      "matchingCriteria": [
+        {
+          "type": "containerName",
+          "value": "^redis-01$"
+        }
+      ],
+      "action": "snapshot",
+      "stage": "pre",
+      "hookSourceID": "3601ed09-1a74-4156-a1bd-9cb7144bac0e",
+      "arguments": [
+        "freeze"
+      ],
+      "enabled": "true",
+      "description": "Order processing hook",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "64182074-ddb6-42eb-b7f4-b6a02cf9ba7c"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+matchingCriteria
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+String JSON que identifica o tipo de critério de correspondência.
+
+
+
+| valor | string | Verdadeiro  a| 
+String JSON contendo uma expressão regular para corresponder ao tipo de correspondência fornecido. Sintaxe da expressão regular: https://github.com/google/re2/wiki/Syntax[]
+
+|===
+[role="api-collapsible-fifth-title"]
+type_k8s_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+matchingContainers
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| podName | string | Falso  a| 
+String JSON contendo o nome do pod do contêiner correspondente.
+
+
+
+| podLabels | array[link:#type_k8s_label["type_k8s_label"]] | Falso  a| 
+Matriz JSON de objetos de rótulos correspondentes aos rótulos do pod do contêiner.
+
+
+
+| containerImage | string | Falso  a| 
+String JSON da imagem correspondente ao contêiner.
+
+
+
+| containerName | string | Falso  a| 
+String JSON contendo o nome do contêiner correspondente.
+
+
+
+| namespaceName | string | Falso  a| 
+String JSON contendo o nome do namespace do pod do contêiner correspondente.
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadados_update
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+executionHook_1.3_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "aplicação/astra-executionHook"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um nome especificado pelo usuário para o recurso. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63. O nome deve ser único em todos os recursos do execution hook.
+
+
+
+
+| hookType | string | Verdadeiro  a| 
+String JSON que define o tipo de gancho. Os valores definidos são:
+
+* "netapp" - NetApp gancho de execução fornecido.
+* "custom" - Vinculado a um ID de aplicativo específico. Os recursos de gancho de execução com hookType "netapp" são somente leitura.
+
+
+
+
+| matchingCriteria | array[link:#matchingCriteria["matchingCriteria"]] | Verdadeiro  a| 
+Matriz JSON de objetos JSON que descrevem os critérios de correspondência para o gancho de execução. Quando vários matchingCriteria são especificados, um operador lógico AND é aplicado aos critérios. Os valores definidos são:
+
+* Itens mínimos: 0
+* Máximo de itens: 10
+
+
+
+
+| matchingContainers | array[link:#matchingContainers["matchingContainers"]] | Falso  a| 
+Matriz JSON de objetos JSON de cada contêiner que corresponde aos critérios de correspondência configurados no aplicativo definido.
+
+
+
+| matchingImages | array[string] | Falso  a| 
+Array JSON contendo strings JSON para as imagens de contêiner correspondentes. Os valores definidos são:
+
+* Itens mínimos: 0
+* Máximo de itens: 4095
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| Ação | string | Verdadeiro  a| 
+String JSON que indica qual ação o gancho de execução executará, caso os critérios de correspondência sejam atendidos. Os valores definidos são:
+
+* "instantâneo"
+* "backup"
+* "restaurar"
+* "failover"
+
+
+
+
+| estágio | string | Verdadeiro  a| 
+String JSON que indica o estágio da ação em que o gancho será executado. Os valores definidos são:
+
+* "pre" - O gancho de execução será executado antes da ação especificada.
+* "post" - O gancho de execução será executado após a ação especificada. Os valores para a ação "snapshot" são "pre" e "post". Os valores para a ação "backup" são "pre" e "post". O valor para a ação "restore" é "post". O valor para a ação "failover" é "post".
+
+
+
+
+| hookSourceID | string | Verdadeiro  a| 
+String JSON contendo o ID da origem do gancho que é executada por meio deste gancho de execução. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| argumentos | array[string] | Falso  a| 
+Array JSON contendo strings JSON para os argumentos da fonte. Os valores definidos são:
+
+* Itens mínimos: 0
+* Máximo de itens: 16
+* Comprimento mínimo: 0
+* Comprimento máximo: 127
+
+
+
+
+| ID do aplicativo | string | Falso  a| 
+String JSON contendo o ID associado ao aplicativo ao qual este hook está vinculado. Essencialmente, outros critérios de correspondência, se definidos. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| habilitado | string | Verdadeiro  a| 
+String JSON que indica se o gancho de execução está habilitado. Os valores definidos são:
+
+* "true" - O gancho de execução está habilitado e será executado conforme especificado.
+* "false" - O gancho de execução está desativado e nunca será executado. O valor padrão é "true".
+
+
+
+
+| descrição | string | Falso  a| 
+String JSON contendo uma descrição especificada pelo usuário para a origem do gancho. Os valores definidos são:
+
+* Comprimento mínimo: 0
+* Comprimento máximo: 511
+
+
+
+
+| metadados | link:#type_astra_metadata_update["type_astra_metadados_update"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| continuar | string | Falso  a| 
+
+
+
+| contar | número | Falso  a| 
+
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

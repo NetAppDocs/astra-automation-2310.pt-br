@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/subscription_endpoints.html 
+summary: 'Pontos de extremidade de assinatura da Astra API (ACC)' 
+---
+= Pontos de extremidade de assinatura da Astra API (ACC)
+:allow-uri-read: 
+
+
+A Subscription API fornece acesso a recursos de assinatura para representar assinaturas ativas.

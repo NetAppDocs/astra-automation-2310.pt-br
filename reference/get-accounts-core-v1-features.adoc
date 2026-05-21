@@ -1,0 +1,553 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-features.html 
+summary: Listar todas as funcionalidades 
+---
+= Listar todas as funcionalidades
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features`#
+
+Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| incluir | string | consulta | Falso  a| 
+Indica quais campos devem ser retornados ao listar uma coleção.
+
+Exemplos de URL: "include=id", "include=id,name"
+
+Exemplos OpenAPI: "id"
+
+
+
+| limite | string | consulta | Falso  a| 
+Indica o número máximo de recursos a serem retornados ao listar uma coleção.
+
+Exemplos de URL: "limit=2"
+
+Exemplos OpenAPI: "2"
+
+
+
+| filtro | string | consulta | Falso  a| 
+Indica quais campos devem ser correspondidos para retornar um recurso ao listar uma coleção.
+
+Os operadores suportados são:
+
+* eq - Igualdade
+* lt/gt - Menor que/Maior que
+* lte/gte - Menor ou igual a/Maior ou igual a
+
+
+Exemplo de URL: "filter=field%20eq%20%27value%27"
+
+Exemplos OpenAPI: "campo eq 'valor'"
+
+
+
+| contar | string | consulta | Falso  a| 
+Indica se o número total de recursos deve ser retornado no objeto metadados.
+
+Exemplos de URL: "count=true"
+
+Exemplos OpenAPI: "true"
+
+
+
+| Ordenar | string | consulta | Falso  a| 
+Indica a ordem de classificação dos recursos ao listar uma coleção.
+
+Exemplos de URL: "orderBy=name", "orderBy=name%20desc"
+
+Exemplos OpenAPI: "nome desc"
+
+
+
+| ignorar | string | consulta | Falso  a| 
+Indica o número de recursos a serem ignorados ao listar uma coleção.
+
+Exemplos de URL: "skip=1"
+
+Exemplos OpenAPI: "1"
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| itens | array[Qualquer um de: link:#feature_1_1_get_response_body["recurso_1.1_obter_corpo_da_resposta"], array[]] | Verdadeiro  a| 
+
+
+
+| metadados | link:#type_astra_metadata_list["type_astra_metadata_list"] | Verdadeiro  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-features",
+  "version": "1.1",
+  "items": [
+    {
+      "type": "application/astra-feature",
+      "version": "1.0",
+      "id": "c1d4d2f7-9b30-45a2-9657-8b24f17a4fd1",
+      "name": "astra.account.rbac",
+      "isEnabled": "true",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2021-02-19T22:10:22.448274Z",
+        "modificationTimestamp": "2021-02-19T22:10:22.448274Z",
+        "createdBy": "c9550bbb-e70b-4578-8504-07397f875bcb"
+      }
+    },
+    {
+      "type": "application/astra-feature",
+      "version": "1.0",
+      "id": "85c693cd-2f89-4944-982a-e885301162bd",
+      "name": "astra.account.smtp",
+      "isEnabled": "false",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2021-02-19T22:10:22.448274Z",
+        "modificationTimestamp": "2021-02-19T22:10:22.448274Z",
+        "createdBy": "c9550bbb-e70b-4578-8504-07397f875bcb"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+recurso_1.1_obter_corpo_da_resposta
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-feature"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um nome para a funcionalidade, em notação hierárquica de ponto. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+* Essa string é validada internamente para evitar ataques de XSS, Unicode, travessia de diretório e injeção de SQL.
+
+
+
+
+| isEnabled | string | Verdadeiro  a| 
+String JSON contendo um valor que indica se o feature flag está ativado ou desativado. Os valores definidos são:
+
+* "true" - O recurso está ativado.
+* "false" - O recurso está desativado.
+
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| continuar | string | Falso  a| 
+
+
+
+| contar | número | Falso  a| 
+
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

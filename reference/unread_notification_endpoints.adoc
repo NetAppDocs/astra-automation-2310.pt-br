@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/unread_notification_endpoints.html 
+summary: 'Pontos de extremidade de notificação não lida da API Astra (ACC)' 
+---
+= Pontos de extremidade de notificação não lida da API Astra (ACC)
+:allow-uri-read: 
+
+
+A API de Notificações Não Lidas fornece informações sobre notificações que não foram lidas por um determinado usuário e permite que elas sejam marcadas como lidas.

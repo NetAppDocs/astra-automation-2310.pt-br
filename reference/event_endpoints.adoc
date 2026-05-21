@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/event_endpoints.html 
+summary: 'Pontos de extremidade de eventos da API Astra (ACC)' 
+---
+= Pontos de extremidade de eventos da API Astra (ACC)
+:allow-uri-read: 
+
+
+A API de Eventos fornece acesso aos eventos que ocorrem no sistema.

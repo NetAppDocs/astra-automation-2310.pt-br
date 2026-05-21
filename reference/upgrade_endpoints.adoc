@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/upgrade_endpoints.html 
+summary: 'Pontos de extremidade de upgrade da Astra API (ACC)' 
+---
+= Pontos de extremidade de upgrade da Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Upgrade App fornece acesso a componentes de software elegíveis para upgrade e permite iniciar upgrades. A disponibilidade de upgrades é determinada com base nos pacotes registrados na Packages API.

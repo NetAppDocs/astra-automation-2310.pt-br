@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_backend_endpoints.html 
+summary: 'Pontos de extremidade de armazenamento do backend da Astra API (ACC)' 
+---
+= Pontos de extremidade de armazenamento do backend da Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Backend de Armazenamento fornece acesso a representações de provedores de serviços de armazenamento (backends de armazenamento) que podem ser usados por clusters gerenciados e aplicativos.

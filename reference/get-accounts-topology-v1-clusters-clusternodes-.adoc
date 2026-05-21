@@ -1,0 +1,529 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clusters-clusternodes-.html 
+summary: Recuperar um nó de cluster para um cluster 
+---
+= Recuperar um nó de cluster para um cluster
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+Retorna o recurso da API Cluster Node armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| cluster_id | string | caminho | Verdadeiro  a| 
+ID do recurso de cluster que o contém
+
+
+
+| clusterNode_id | string | caminho | Verdadeiro  a| 
+ID da coleção clusterNode a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Cluster Node API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "aplicação/astra-clusterNode"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o nome do nó no Kubernetes. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| papel | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a função do Kubernetes para o nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| etiquetas | array[link:#labels["etiquetas"]] | Verdadeiro  a| 
+Matriz JSON de objetos JSON, cada um contendo rótulos do Kubernetes associados ao nó. Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Itens mínimos: 0
+
+
+
+
+| creationTime | string | Verdadeiro  a| 
+String JSON contendo um timestamp ISO 8601 que indica quando o nó foi criado. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| IP externo | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o endereço IP interno do nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+
+
+
+
+| IP interno | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o endereço IP externo do nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+
+
+
+
+| zona | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a zona Kubernetes do nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| região | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a região do Kubernetes para o nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| instanceType | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o tipo de instância do Kubernetes para o nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| kernelVersion | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a versão do kernel usada pelo nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| osImage | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a imagem do sistema operacional usada pelo nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| numCpus | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o número de CPUs atribuídas ao nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| memória | string | Verdadeiro  a| 
+String JSON contendo um valor que indica a quantidade de memória alocada ao nó. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 254
+
+
+
+
+| estado | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o estado operacional do nó. Os valores definidos são:
+
+* "Em execução" - O nó está em execução normalmente
+* "Provisionamento" - O nó está em processo de provisionamento
+* "Descobrindo" - Aspectos do nó estão em processo de descoberta
+* "Pendente" - O nó está agendado para descoberta
+* "failed" - O nó está em estado de falha
+* "Desconhecido" - O estado do nó não pode ser determinado
+
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusterNode",
+  "version": "1.0",
+  "id": "5df0e09f-2c30-5b8a-b6b6-4fb4063525e4",
+  "name": "test-0",
+  "role": "node-role.kubernetes.io/worker",
+  "labels": [],
+  "creationTime": "2020-09-06T04:35:23.593845Z",
+  "externalIP": "192.168.12.44",
+  "internalIP": "10.0.1.1",
+  "zone": "us-west1-c",
+  "region": "us-east1",
+  "instanceType": "e2-medium",
+  "kernelVersion": "4.18.0-147.0.3.el8_1.x86_64",
+  "osImage": "Red Hat Enterprise Linux CoreOS 42.81.20191203.0",
+  "numCpus": "2",
+  "memory": "67108864Ki",
+  "state": "running",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+etiquetas
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo o nome do rótulo Definidos valores são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+* A expressão regular definida é: "^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| valor | string | Verdadeiro  a| 
+String JSON contendo o valor do rótulo Definidos valores são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+* A expressão regular definida é: "^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

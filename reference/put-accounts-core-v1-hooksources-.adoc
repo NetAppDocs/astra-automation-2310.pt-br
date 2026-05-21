@@ -1,0 +1,497 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-hooksources-.html 
+summary: Modificar uma fonte de gancho 
+---
+= Modificar uma fonte de gancho
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
+
+Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
+
+*Efeitos Colaterais*
+
+* A atualização de um gancho de origem existente afetará imediatamente quaisquer snapshots futuros de aplicativos que possuam ganchos de execução correspondentes que utilizem o recurso de gancho de origem atualizado.
+* O checksum MD5 é calculado com base no valor do campo "source" e definido como o valor do campo "sourceMD5Checksum".
+
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| hookSource_id | string | caminho | Verdadeiro  a| 
+ID da coleção hookSource a ser listada
+
+|===
+
+
+== Corpo da solicitação
+
+Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
+
+*Efeitos Colaterais*
+
+* A atualização de um gancho de origem existente afetará imediatamente quaisquer snapshots futuros de aplicativos que possuam ganchos de execução correspondentes que utilizem o recurso de gancho de origem atualizado.
+* O checksum MD5 é calculado com base no valor do campo "source" e definido como o valor do campo "sourceMD5Checksum".
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "aplicação/astra-hookSource"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+
+
+
+
+| id | string | Falso  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Falso  a| 
+String JSON contendo um nome especificado pelo usuário para o recurso. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63 O nome deve ser único em todos os recursos de origem do gancho.
+
+
+
+
+| privado | string | Falso  a| 
+String JSON que indica se o campo de origem será exposto nas APIs ou se será intencionalmente deixado em branco. Os valores definidos são:
+
+* "true" - O valor de origem é privado e não será exposto através da API.
+* "false" - O valor de origem não é privado e será exposto através da API.
+
+
+
+
+| pré-carregado | string | Falso  a| 
+String JSON que indica se a fonte foi pré-carregada. Os valores definidos são:
+
+* "true" - A fonte foi pré-carregada.
+* "false" - A fonte não foi pré-carregada. Os recursos de origem de hook pré-carregados são somente leitura.
+
+
+
+
+| sourceType | string | Falso  a| 
+String JSON que define o tipo de origem do gancho. Os valores definidos são:
+
+* "script" - Script de shell. O código-fonte em texto simples não deve conter dados binários nem caracteres de retorno de carro, caso contrário, será retornado um erro.
+
+
+
+
+| fonte | string | Falso  a| 
+String JSON contendo o script a ser executado em formato base64. Os valores definidos são:
+
+* Comprimento mínimo: 0
+* Comprimento máximo: 131072
+* Está em conformidade com o esquema de dados codificados em base64 O tamanho máximo de um valor de origem é de 128 KiB quando codificado usando base64.
+
+
+
+
+| sourceMD5Checksum | string | Falso  a| 
+String JSON contendo o checksum MD5 calculado para o valor da chave "source". Os valores definidos são:
+
+* A expressão regular definida é: "^([0-9a-fA-F]){32}$"
+
+
+
+
+| descrição | string | Falso  a| 
+String JSON contendo uma descrição da origem do gancho especificada pelo usuário. Os valores definidos são:
+
+* Comprimento mínimo: 0
+* Comprimento máximo: 511
+
+
+
+
+| metadados | link:#type_astra_metadata_update["type_astra_metadados_update"] | Falso  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+|===
+.Exemplo de solicitação
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-hookSource",
+  "version": "1.0",
+  "source": "ZWNobyAiVkhKaGJuTWdVbWxuYUhSeklRPT0iIHwgYmFzZTY0IC1k",
+  "description": "Pre and post hook script for order processing v2"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 204, Indicates if the hookSource resource was updated.
+----
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidFields | array[link:#invalidFields["invalidFields"]] | Falso  a| 
+Lista de campos inválidos no corpo da requisição
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidFields | array[link:#invalidFields["invalidFields"]] | Falso  a| 
+Lista de campos inválidos no corpo da requisição
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadados_update
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do campo inválido no corpo da requisição
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o campo do corpo da solicitação é inválido
+
+|===
+====

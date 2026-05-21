@@ -1,0 +1,536 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-apps-appbackups-.html 
+summary: Recuperar um backup de um aplicativo 
+---
+= Recuperar um backup de um aplicativo
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
+
+Retorna o recurso da API de backup de aplicativos armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| app_id | string | caminho | Verdadeiro  a| 
+ID do recurso do aplicativo que o contém
+
+
+
+| appBackup_id | string | caminho | Verdadeiro  a| 
+ID da appBackup coleção a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Application Backup API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "aplicação/astra-appBackup"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um nome especificado pelo usuário para o backup. Se não for especificado, ou quando backups forem iniciados por um agendamento, o sistema atribui um nome para o backup. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+* Em conformidade com o esquema de rótulos DNS 1123
+
+
+
+
+| bucketID | string | Verdadeiro  a| 
+String JSON contendo um ID de bucket opcional que indica onde o backup será armazenado na criação. Se não for especificado, um bucket selecionado pelo sistema será usado. Se nenhum bucket estiver disponível, um erro será retornado na criação. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| ID do Snapshot | string | Falso  a| 
+String JSON contendo o snapshot usado para criar o backup. Para criar o backup, um ID de snapshot associado ao aplicativo que está sendo copiado pode ser especificado no momento da criação. Se não for especificado, um novo snapshot será criado para o backup. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| ID do agendamento | string | Falso  a| 
+String JSON contendo um ID de agendamento opcional que indica que o backup foi acionado por um agendamento e qual agendamento acionou o backup. Presente apenas para backups iniciados por um agendamento. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| estado | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o estado operacional do backup. Os valores definidos são:
+
+* "Pendente" - O backup do aplicativo está agendado para descoberta
+* "Descobrindo" - O backup do aplicativo está em processo de descoberta
+* "Em execução" - O backup do aplicativo está sendo executado normalmente
+* "Concluído" - O backup do aplicativo foi concluído com sucesso
+* "Falha" - O backup do aplicativo está em estado de falha permanente
+* "Removido" - O backup do aplicativo não está acessível no momento
+* "Desconhecido" - Não foi possível determinar o estado do backup do aplicativo
+* "Excluindo" - O backup do aplicativo está agendado para exclusão
+
+
+
+
+| stateUnready | array[string] | Verdadeiro  a| 
+Matriz JSON de strings JSON, cada uma indicando um motivo pelo qual um backup de aplicativo não consegue passar para o estado "em execução", ou por que passou para o estado "falhou" ou "removido". Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 127
+
+
+
+
+| hookState | string | Falso  a| 
+String JSON contendo um valor que indica o estado de quaisquer hooks de execução executados como parte de um snapshot. Os valores definidos são:
+
+* "failed" - Um ou mais ganchos de execução falharam
+* "Sucesso" - Havia zero ou mais ganchos aplicáveis e todos foram bem-sucedidos
+
+
+
+
+| hookStateDetails | array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falso  a| 
+Matriz JSON de objetos JSON que lista detalhes adicionais sobre o motivo pelo qual "hookState" foi transferido para "falhou". Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Itens mínimos: 0
+
+
+
+
+| backupCreationTimestamp | string | Falso  a| 
+String JSON contendo um registro de data e hora indicando quando o backup foi realizado. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| totalBytes | número | Falso  a| 
+Número JSON contendo o número total de bytes no backup.
+
+
+
+| bytesDone | número | Falso  a| 
+Número JSON contendo o número de bytes copiados para um backup em andamento. Quando o backup for concluído, ele corresponderá ao campo totalBytes.
+
+
+
+| percentDone | número | Falso  a| 
+Número JSON contendo a porcentagem de conclusão de um backup em andamento. Quando o backup é concluído, ele é definido como "100".
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos.
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appBackup",
+  "version": "1.2",
+  "id": "bab39d53-2d04-5297-b92e-58df89a2117b",
+  "name": "app-name-245",
+  "bucketID": "0afbe357-a717-4c7a-8b3d-d0368959c8de",
+  "scheduleID": "1fe83650-9b3c-41ef-bb25-a2910c19c33e",
+  "state": "pending",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/95",
+  "title": "Backup not retrieved",
+  "detail": "The backup wasn't retrieved because of an internal server issue.",
+  "status": "500"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

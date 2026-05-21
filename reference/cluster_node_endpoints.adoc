@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_node_endpoints.html 
+summary: 'Pontos de extremidade do nó de cluster da API Astra (ACC)' 
+---
+= Pontos de extremidade do nó de cluster da API Astra (ACC)
+:allow-uri-read: 
+
+
+A API de nó de cluster fornece acesso aos nós associados a um cluster.

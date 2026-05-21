@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/execution_hook_override_endpoints.html 
+summary: 'Pontos de extremidade de substituição do gancho de execução da Astra API (ACC)' 
+---
+= Pontos de extremidade de substituição do gancho de execução da Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Substituição de Gancho de Execução permite que um usuário desabilite os ganchos de execução "netapp" pré-carregados para um aplicativo específico. (*OBSERVE AS DEPRECIAÇÕES DA API ABAIXO*)

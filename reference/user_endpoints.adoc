@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/user_endpoints.html 
+summary: 'Pontos de extremidade do usuário da Astra API (ACC)' 
+---
+= Pontos de extremidade do usuário da Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Usuário representa os usuários que podem interagir com o sistema.

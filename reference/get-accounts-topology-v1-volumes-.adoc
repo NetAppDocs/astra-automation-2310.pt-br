@@ -1,0 +1,546 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-volumes-.html 
+summary: Recuperar um volume 
+---
+= Recuperar um volume
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/volumes/{volume_id}`#
+
+Retorna o recurso da API Volume armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| id_do_volume | string | caminho | Verdadeiro  a| 
+ID da coleção de volumes a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Volume API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-volume"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo o nome do volume. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| estado | string | Falso  a| 
+Cadeia JSON contendo um valor que indica o estado operacional do volume.
+
+
+
+| tamanho | string | Falso  a| 
+Cadeia JSON contendo o tamanho do volume.
+
+
+
+| usado | número | Falso  a| 
+Número JSON contendo o número de bytes da cota utilizada pelo volume provisionado.
+
+
+
+| usedPercentage | número | Falso  a| 
+Número JSON contendo a porcentagem do volume utilizado.
+
+
+
+| total | número | Falso  a| 
+Número JSON contendo o total de bytes dos volumes provisionados.
+
+
+
+| creationToken | string | Falso  a| 
+String JSON contendo o token de criação do volume. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| snapshotPossible | string | Falso  a| 
+String JSON que indica se o driver pode realizar um snapshot do volume. Os valores definidos são:
+
+* "verdadeiro" - O driver pode tirar um snapshot do volume
+* "falso" - O driver não pode tirar uma captura instantânea do volume
+
+
+
+
+| storageClass | string | Falso  a| 
+String JSON contendo a classe de armazenamento do volume.
+
+* Os valores definidos são:
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| pvcName | string | Falso  a| 
+Cadeia JSON contendo o nome PersistentVolumeClaim (PVC) do volume.
+
+* Os valores definidos são:
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| internalName | string | Falso  a| 
+String JSON contendo o nome interno do volume no cluster de armazenamento de destino, se disponível. Esse nome é obtido do driver CSI do Kubernetes.
+
+* Os valores definidos são:
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| appsUsing | array[string] | Verdadeiro  a| 
+Matriz JSON de strings JSON, cada uma contendo o ID de um aplicativo que está usando o volume. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| ID do backend de armazenamento | string | Falso  a| 
+String JSON contendo o ID do backend de armazenamento que fornece o volume. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| orquestrador | string | Falso  a| 
+String JSON contendo o orquestrador para este volume. Isso será definido para volumes do Astra Data Store. Os valores definidos são:
+
+* "trident" - Trident forneceu este volume
+* "vasa" - NetApp VASA Provider disponibilizou este volume
+* "other" - O volume foi provisionado manualmente ou o orquestrador é desconhecido
+
+
+
+
+| serviceLevel | string | Falso  a| 
+String JSON contendo a política de qualidade do serviço (QoS) definida para este volume no nível do backend de armazenamento. Isso será definido para volumes do Astra Data Store.
+
+
+
+| exportPolicy | string | Falso  a| 
+String JSON contendo a política de exportação associada a este volume. Isso será definido para volumes do Astra Data Store.
+
+
+
+| nodeId | string | Falso  a| 
+String JSON contendo o ID do nó que serve o volume. Isso será definido para volumes do Astra Data Store. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| healthState | string | Falso  a| 
+String JSON contendo um valor que indica o estado de integridade do volume. Isso será definido para volumes do Astra Data Store. Os valores definidos são:
+
+* "Indeterminado" - O estado de saúde do recurso não pode ser determinado (por exemplo, devido à falta de conectividade)
+* "normal" - O recurso não apresenta problemas conhecidos e pode fornecer serviços de acordo com a especificação da interface
+* "Aviso" - O recurso apresenta problemas conhecidos que não o impedem de fornecer serviços de acordo com a especificação da interface
+* "Crítico" - O recurso apresenta problemas conhecidos que o impedem de fornecer serviços de acordo com a especificação da interface
+
+
+
+
+| healthStateDetails | array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Verdadeiro  a| 
+Matriz JSON de objetos JSON que lista detalhes adicionais sobre o estado de saúde atual. Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Quantidade mínima de itens: 0
+
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-volume",
+  "version": "1.2",
+  "id": "ab5c9fb8-ddba-526f-8bd3-8d5b72cf4f7f",
+  "name": "myVolume",
+  "state": "ready",
+  "size": "512 GiB",
+  "used": 10000000000,
+  "usedPercentage": 10,
+  "total": 10000000000,
+  "creationToken": "ba7d4e0c-6ae3-4b6e-859d-9463e7ca4b4e",
+  "snapshotPossible": "true",
+  "storageClass": "gold",
+  "pvcName": "myVolume",
+  "internalName": "trident_sd234234_23424_897d_876sd65w",
+  "appsUsing": [],
+  "orchestrator": "trident",
+  "serviceLevel": "gold",
+  "exportPolicy": "astra-vp-default",
+  "nodeId": "94d16dd2-9beb-4edb-ab58-1a00e9a90052",
+  "healthState": "normal",
+  "healthStateDetails": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

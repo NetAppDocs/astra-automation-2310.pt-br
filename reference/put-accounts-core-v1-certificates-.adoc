@@ -1,0 +1,603 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-certificates-.html 
+summary: Modificar um certificado 
+---
+= Modificar um certificado
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida.
+
+*Efeitos Colaterais*
+
+* Um certificado de autoridade certificadora (CA) atualizado será atualizado no repositório de certificados confiáveis.
+* Se um certificado de CA confiável existente deixar de ser confiável, ele será removido do trust store.
+* Se o corpo do certificado for atualizado (campo "cert"), o indicador "isSelfSigned" deve ser incluído para indicar o estado do novo certificado. Se o indicador "isSelfSigned" não for incluído neste caso, o valor será definido como "false".
+* Se uma atualização não modificar o corpo do certificado (campo "cert"), o indicador "isSelfSigned" é opcional e o valor existente será mantido se não for fornecido.
+
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| certificate_id | string | caminho | Verdadeiro  a| 
+ID da coleção de certificados a ser listada
+
+|===
+
+
+== Corpo da solicitação
+
+Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida.
+
+*Efeitos Colaterais*
+
+* Um certificado de autoridade certificadora (CA) atualizado será atualizado no repositório de certificados confiáveis.
+* Se um certificado de CA confiável existente deixar de ser confiável, ele será removido do trust store.
+* Se o corpo do certificado for atualizado (campo "cert"), o indicador "isSelfSigned" deve ser incluído para indicar o estado do novo certificado. Se o indicador "isSelfSigned" não for incluído neste caso, o valor será definido como "false".
+* Se uma atualização não modificar o corpo do certificado (campo "cert"), o indicador "isSelfSigned" é opcional e o valor existente será mantido se não for fornecido.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-certificate"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | string | Falso  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| certUse | string | Falso  a| 
+String JSON que indica o uso do certificado. Se não for especificado, o padrão é "rootCA". Os valores definidos são:
+
+* "rootCA" - O certificado é um certificado de autoridade certificadora (CA) usado para confiar em qualquer certificado assinado por essa CA.
+* "intermediateCA" - O certificado é um certificado de CA intermediário emitido por uma CA raiz.
+
+
+
+
+| certificado | string | Falso  a| 
+String JSON contendo um certificado formatado em PKCS-11 codificado em base64 (PEM). Os valores definidos são:
+
+* Está em conformidade com o esquema de dados codificados em base64
+
+
+
+
+| cn | string | Falso  a| 
+String JSON contendo um nome comum extraído do certificado. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 511
+
+
+
+
+| expiryTimestamp | string | Falso  a| 
+String JSON contendo um carimbo de data/hora indicando quando o certificado expira. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| isSelfSigned | string | Falso  a| 
+String JSON indicando se o certificado é autoassinado. Se não for fornecida na criação, o valor padrão é "false". Na atualização:
+
+* Se um valor for fornecido, esse valor será utilizado.
+* Se o valor não for fornecido e o campo "cert" estiver incluído na atualização, o valor será definido como "false".
+* Se o valor não for fornecido e o campo "cert" não estiver incluído na atualização, o valor existente será mantido. Os valores definidos são:
+* "verdadeiro" - O certificado é autoassinado.
+* "falso" - O certificado não é autoassinado.
+
+
+
+
+| trustState | string | Falso  a| 
+String JSON contendo um de um conjunto de valores enumerados que indicam se o certificado é confiável. Os valores definidos são:
+
+* "Não confiável" - O certificado não é confiável.
+* "trusted" - O certificado está marcado como confiável.
+* "expired" - O certificado expirou, portanto não é confiável nem não confiável.
+
+
+
+
+| trustStateTransitions | array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Falso  a| 
+Matriz JSON de objetos JSON, cada um representando o conjunto de transições de estado permitidas a partir de um determinado estado definido. Cada objeto JSON contém os campos "from" e "to", onde o valor de "from" é o nome de um estado e o valor de "to" é uma matriz de estados de destino permitidos.
+
+
+
+| trustStateDesired | string | Falso  a| 
+String JSON contendo um valor que indica se o certificado é confiável. Se não for especificado na criação, o valor padrão é "trusted". Os valores definidos são:
+
+* "Não confiável" - O certificado não é confiável.
+* "trusted" - O certificado está marcado como confiável.
+
+
+
+
+| trustStateDetails | array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falso  a| 
+Matriz JSON de objetos JSON que lista detalhes adicionais sobre o estado de confiança do certificado. Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Quantidade mínima de itens: 0
+
+
+
+
+| metadados | link:#type_astra_metadata_update["type_astra_metadados_update"] | Falso  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+|===
+.Exemplo de solicitação
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.1",
+  "trustStateDesired": "trusted"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 204, Indicates if the certificate resource was updated.
+----
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidFields | array[link:#invalidFields["invalidFields"]] | Falso  a| 
+Lista de campos inválidos no corpo da requisição
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidFields | array[link:#invalidFields["invalidFields"]] | Falso  a| 
+Lista de campos inválidos no corpo da requisição
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| de | string | Verdadeiro  a| 
+
+
+
+| para | array[string] | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadados_update
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do campo inválido no corpo da requisição
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o campo do corpo da solicitação é inválido
+
+|===
+====

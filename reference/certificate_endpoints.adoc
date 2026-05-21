@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/certificate_endpoints.html 
+summary: 'Pontos de extremidade de certificado da API Astra (ACC)' 
+---
+= Pontos de extremidade de certificado da API Astra (ACC)
+:allow-uri-read: 
+
+
+A API do aplicativo de certificados representa certificados confiáveis pelo administrador que são usados para estabelecer conexões de saída.

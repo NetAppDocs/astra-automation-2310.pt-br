@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/managed_cluster_endpoints.html 
+summary: 'Endpoints de cluster gerenciados pela Astra API (ACC)' 
+---
+= Endpoints de cluster gerenciados pela Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Cluster Gerenciado representa clusters Kubernetes gerenciados.

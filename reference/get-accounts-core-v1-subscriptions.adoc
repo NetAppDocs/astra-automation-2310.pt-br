@@ -1,0 +1,646 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-subscriptions.html 
+summary: Liste todas as assinaturas 
+---
+= Liste todas as assinaturas
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| continuar |  | consulta | Falso  a| 
+Indica o token a partir do qual a listagem será retomada.
+
+Exemplos de URL: "continue=+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++
+
+Exemplos OpenAPI: "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+
+
+| contar | string | consulta | Falso  a| 
+Indica se o número total de recursos deve ser retornado no objeto metadados.
+
+Exemplos de URL: "count=true"
+
+Exemplos OpenAPI: "true"
+
+
+
+| filtro | string | consulta | Falso  a| 
+Indica quais campos devem ser correspondidos para retornar um recurso ao listar uma coleção.
+
+Os operadores suportados são:
+
+* eq - Igualdade
+* lt/gt - Menor que/Maior que
+* lte/gte - Menor ou igual a/Maior ou igual a
+
+
+Exemplo de URL: "filter=field%20eq%20%27value%27"
+
+Exemplos OpenAPI: "campo eq 'valor'"
+
+
+
+| incluir | string | consulta | Falso  a| 
+Indica quais campos devem ser retornados ao listar uma coleção.
+
+Exemplos de URL: "include=id", "include=id,name"
+
+Exemplos OpenAPI: "id"
+
+
+
+| limite | string | consulta | Falso  a| 
+Indica o número máximo de recursos a serem retornados ao listar uma coleção.
+
+Exemplos de URL: "limit=2"
+
+Exemplos OpenAPI: "2"
+
+
+
+| Ordenar | string | consulta | Falso  a| 
+Indica a ordem de classificação dos recursos ao listar uma coleção.
+
+Exemplos de URL: "orderBy=name", "orderBy=name%20desc"
+
+Exemplos OpenAPI: "nome desc"
+
+
+
+| ignorar | string | consulta | Falso  a| 
+Indica o número de recursos a serem ignorados ao listar uma coleção.
+
+Exemplos de URL: "skip=1"
+
+Exemplos OpenAPI: "1"
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| itens | array[Qualquer um de: link:#subscription_1_2_get_response_body["subscription_1.2_get_response_body"], array[]] | Verdadeiro  a| 
+
+
+
+| metadados | link:#type_astra_metadata_list["type_astra_metadata_list"] | Verdadeiro  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-subscriptions",
+  "version": "1.2",
+  "items": [
+    {
+      "type": "application/astra-subscription",
+      "version": "1.1",
+      "id": "d4c865c9-64a7-4661-ae4a-3307dffcd3da",
+      "customerProfileID": "2157047189",
+      "paymentProfileID": "E7CEB0A9F1BECA32A02493E1B31D5955",
+      "paymentExpiry": "2022-02-01T00:00:00Z",
+      "purchaseOrderNumber": "72384632",
+      "marketplace": "netapp",
+      "licenseSN": "278343",
+      "terms": "trial",
+      "status": "inactive",
+      "appLimit": 0,
+      "namespaceLimit": 10,
+      "subscriptionPeriod": 90,
+      "gracePeriod": 7,
+      "reminderBeforePeriod": 30,
+      "onboardStatus": "success",
+      "costPerAppUnit": 0,
+      "costPerNamespaceUnit": 0.005,
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-05-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-05-06T12:24:52.256624Z",
+        "createdBy": "11c0cfa1-4f27-4ef7-a21c-cb452fc5c9aa"
+      }
+    },
+    {
+      "type": "application/astra-subscription",
+      "version": "1.1",
+      "id": "4c43ed8b-078f-4fe3-b8c6-5d515f6382e6",
+      "customerProfileID": "2157047189",
+      "paymentProfileID": "E7CEB0A9F1BECA32A02493E1B31D5955",
+      "paymentExpiry": "2022-05-01T00:00:00Z",
+      "purchaseOrderNumber": "92374658",
+      "marketplace": "netapp",
+      "licenseSN": "374623",
+      "terms": "paid",
+      "status": "active",
+      "appLimit": 0,
+      "namespaceLimit": -1,
+      "subscriptionPeriod": -1,
+      "gracePeriod": -1,
+      "reminderBeforePeriod": -1,
+      "onboardStatus": "success",
+      "costPerAppUnit": 0,
+      "costPerNamespaceUnit": 0.005,
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "11c0cfa1-4f27-4ef7-a21c-cb452fc5c9aa"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadados_update
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+subscription_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-subscription"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| ID do perfil do cliente | string | Verdadeiro  a| 
+String JSON contendo o ID do perfil do cliente de  http://authorize.net["Authorize.net"], que foi invocada pela interface do usuário, não está definida para o período de carência. Retorna uma string vazia durante a operação de leitura, caso não esteja definida. Os valores definidos são:
+
+* Comprimento mínimo: 0
+* Comprimento máximo: 63
+
+
+
+
+| ID do perfil de pagamento | string | Falso  a| 
+String JSON contendo o ID do perfil de pagamento  http://Authorize.net["Authorize.net"] que foi invocado pela interface do usuário, não definido para o período de avaliação. Retorna uma string vazia durante a operação de leitura se não estiver definido. Os valores definidos são:
+
+* Comprimento mínimo: 0
+* Comprimento máximo: 63
+
+
+
+
+| paymentExpiry | string | Falso  a| 
+String JSON contendo um timestamp indicando quando o método de pagamento expira. Este valor é obtido do authorize.net(http://authorize.net[] e definido pela interface do usuário. Os valores definidos são:
+
+* Em conformidade com o padrão de data e hora ISO-8601 Este campo não é retornado durante o período de avaliação.
+
+
+
+
+| purchaseOrderNumber | string | Falso  a| 
+String JSON contendo o número do pedido de compra para o método de pagamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 31
+
+
+
+
+| marketplace | string | Falso  a| 
+String JSON que indica o marketplace para uma conta onde os pagamentos serão registrados. Valores definidos:
+
+* "netapp"
+* "azure"
+* "aws"
+* "gcp"
+
+
+
+
+| licenseSN | string | Falso  a| 
+String JSON contendo o número de série da licença para o método de pagamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 31
+
+
+
+
+| termos | string | Verdadeiro  a| 
+String JSON que indica o nível atual da conta. Os valores definidos são:
+
+* "teste"
+* "pago"
+
+
+
+
+| status | string | Verdadeiro  a| 
+String JSON que indica o status atual da assinatura. Os valores definidos são:
+
+* "ativo"
+* "inativo"
+
+
+
+
+| appLimit | número | Verdadeiro  a| 
+Número JSON que indica o limite de aplicativos para esta assinatura. O valor -1 indica que não há limite.
+
+
+
+| namespaceLimit | número | Verdadeiro  a| 
+Número JSON que indica o limite de namespace para esta assinatura. O valor -1 indica que não há limite.
+
+
+
+| subscriptionPeriod | número | Verdadeiro  a| 
+Número JSON que indica o período de assinatura. O valor -1 indica que não há limite. Unidade: dias
+
+
+
+| gracePeriod | número | Verdadeiro  a| 
+Número JSON que indica o período de carência após o término da assinatura de avaliação ou o cancelamento de uma assinatura paga. Unidade: dias
+
+
+
+| reminderBeforePeriod | número | Verdadeiro  a| 
+Número JSON que indica a quantidade de dias antes do término da assinatura de avaliação, quando as notificações ao cliente serão iniciadas. O valor é expresso em dias, sendo -1 indicativo de que não se aplica.
+
+
+
+| onboardStatus | string | Verdadeiro  a| 
+String JSON que indica o status atual do processo de integração do cliente. Os valores válidos são "não iniciado", "em andamento", "sucesso", "falha". Os valores definidos são:
+
+* "não iniciado"
+* "em andamento"
+* "sucesso"
+* "falhou"
+
+
+
+
+| costPerAppUnit | número | Verdadeiro  a| 
+Número JSON que indica o custo por unidade do aplicativo. Para uma versão de avaliação, o valor é 0. Unidade: dólares americanos
+
+
+
+| costPerNamespaceUnit | número | Verdadeiro  a| 
+Número JSON que indica o custo por unidade de namespace. Para uma versão de avaliação, o valor é 0. Unidade: dólares americanos
+
+
+
+| metadados | link:#type_astra_metadata_update["type_astra_metadados_update"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| continuar | string | Falso  a| 
+
+
+
+| contar | número | Falso  a| 
+
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

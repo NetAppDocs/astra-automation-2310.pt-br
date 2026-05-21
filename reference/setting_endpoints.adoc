@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/setting_endpoints.html 
+summary: 'Configuração dos endpoints da API Astra (ACC)' 
+---
+= Configuração dos endpoints da API Astra (ACC)
+:allow-uri-read: 
+
+
+Uma configuração de conta é um conjunto de pares chave/valor importantes para uma funcionalidade conhecida em uma conta Astra. A API de Configurações fornece acesso a informações importantes sobre uma configuração de conta.

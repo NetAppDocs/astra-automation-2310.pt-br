@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/role_binding_endpoints.html 
+summary: 'Pontos de extremidade de vinculação de função da Astra API (ACC)' 
+---
+= Pontos de extremidade de vinculação de função da Astra API (ACC)
+:allow-uri-read: 
+
+
+A API de Vinculação de Funções descreve as relações entre os pares usuário-conta ou grupo-conta, juntamente com os conjuntos de permissões que lhes são concedidas (funções).

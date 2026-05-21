@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cloud_endpoints.html 
+summary: 'Pontos de extremidade na nuvem da API Astra (ACC)' 
+---
+= Pontos de extremidade na nuvem da API Astra (ACC)
+:allow-uri-read: 
+
+
+A Cloud API fornece acesso a recursos na nuvem, permitindo que os clientes se conectem a nuvens específicas para gerenciar clusters e aplicativos.

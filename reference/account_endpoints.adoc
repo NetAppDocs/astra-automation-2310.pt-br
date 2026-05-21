@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/account_endpoints.html 
+summary: 'Pontos de extremidade da conta da API Astra (ACC)' 
+---
+= Pontos de extremidade da conta da API Astra (ACC)
+:allow-uri-read: 
+
+
+A Account API representa locatários isolados em um sistema multitenant.

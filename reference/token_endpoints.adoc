@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/token_endpoints.html 
+summary: 'Endpoints de token da API Astra (ACC)' 
+---
+= Endpoints de token da API Astra (ACC)
+:allow-uri-read: 
+
+
+A API de Token permite que os usuários criem e gerenciem tokens de acesso à API.

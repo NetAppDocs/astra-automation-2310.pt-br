@@ -1,0 +1,618 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-notifications-.html 
+summary: Recuperar uma notificação 
+---
+= Recuperar uma notificação
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications/{notification_id}`#
+
+Retorna o recurso da API de Notificação armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| id_da_notificação | string | caminho | Verdadeiro  a| 
+ID da coleção de notificações a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Notification API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-notification"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um nome hierárquico para o evento, delimitado por um ponto (.). Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 127
+* Regex definido é: "^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| sequenceCount | número | Verdadeiro  a| 
+Número JSON contendo uma contagem sequencial. O número é incrementado pelo sistema cada vez que um novo evento é recebido.
+
+
+
+| resumo | string | Verdadeiro  a| 
+String JSON contendo o resumo conciso (menos de 40 caracteres) do evento. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 79
+
+
+
+
+| eventTime | string | Verdadeiro  a| 
+String JSON contendo um registro de data e hora que indica quando um evento ocorreu. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| fonte | string | Verdadeiro  a| 
+String JSON contendo o nome em minúsculas do serviço que gerou um evento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 19
+* A expressão regular definida é: "^([a-z-])*$"
+
+
+
+
+| ID do recurso | string | Verdadeiro  a| 
+String JSON contendo o ID do recurso associado a um evento. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| IDs de recursos adicionais | array[string] | Verdadeiro  a| 
+Array JSON de strings JSON, cada uma contendo o ID de um recurso adicional associado ao evento. Embora o campo "resourceID" contenha o recurso principal associado a este evento, este campo contém qualquer número de IDs de recursos adicionais a serem associados aos mesmos eventos. Se nenhum recurso adicional estiver associado ao evento, o array estará vazio. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| resourceType | string | Verdadeiro  a| 
+String JSON contendo o tipo de mídia do recurso associado a um evento. Os valores definidos são:
+
+* Comprimento mínimo: 4
+* Comprimento máximo: 79
+* A expressão regular definida é: "^application\/astra-([a-zA-Z])+$"
+
+
+
+
+| ID de correlação | string | Verdadeiro  a| 
+String JSON contendo um ID de correlação UUIDv4 que permite agrupar eventos relacionados. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| gravidade | string | Verdadeiro  a| 
+String JSON contendo um dos seguintes valores que indicam a gravidade de um evento. Os valores definidos são:
+
+* "cleared" - Indica que um evento relatado anteriormente, que descrevia uma condição, não está mais ativo. Um evento com a gravidade "cleared" usará o mesmo resumo e ID de correlação para permitir que seja correspondido.
+* "Indeterminado" - Indica que a gravidade não pode ser determinada.
+* "Informativo" - Indica uma mudança de estado que é esperada e normal (não definida em X.733).
+* "warning" - Indica a detecção de uma falha potencial ou iminente que afetará o serviço, antes que quaisquer efeitos significativos sejam sentidos.
+* "Crítico" - Indica que ocorreu uma condição que afeta o serviço e que é necessária uma ação corretiva imediata. As definições de "resolvido", "indeterminado", "aviso" e "crítico" baseiam-se nas definições da cláusula 8.1.2.3 do CCITT X.733.
+
+
+
+
+| classe | string | Verdadeiro  a| 
+String JSON contendo um dos seguintes valores que indicam a classe do evento. Os valores definidos são:
+
+* "sistema" - O evento está relacionado a um evento ou solicitação interna.
+* "usuário" - O evento está relacionado a um evento ou solicitação iniciada pelo usuário.
+* "security" - O evento está relacionado a uma questão de segurança.
+
+
+
+
+| descrição | string | Verdadeiro  a| 
+String JSON contendo um texto descritivo extenso sobre o evento. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 1023
+
+
+
+
+| URL da descrição | string | Falso  a| 
+String JSON contendo a URL que habilita e vincula um botão no banner à documentação externa. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 4095
+
+
+
+
+| correctiveAction | string | Falso  a| 
+String JSON contendo um texto descritivo extenso sobre qual ação corretiva deve ser tomada em resposta ao evento. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 1023
+
+
+
+
+| URL de ação corretiva | string | Falso  a| 
+String JSON contendo a URL que direciona um botão no banner para uma página na interface do usuário para corrigir o problema. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 4095
+
+
+
+
+| visibilidade | array[string] | Falso  a| 
+Array JSON de strings JSON, cada uma indicando uma função RBAC com permissão para visualizar o evento. As funções são definidas em conjunto com o operador OR. Opcional. Se omitido, um usuário com qualquer função RBAC pode visualizar o evento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+
+
+
+
+| destinos | array[string] | Falso  a| 
+Matriz JSON de strings JSON, cada uma indicando um destino adicional para o evento. Isso permite que um serviço forneça dicas sobre para onde um evento deve ser roteado, além do registro de atividades do serviço de Activity. Opcional. Os valores definidos são:
+
+* "notificação" - O evento é marcado como uma notificação e estará acessível através do endpoint da API de notificações.
+* "banner" - O evento está marcado como um banner.
+* "support" - O evento está marcado como um evento relacionado a suporte.
+
+
+
+
+| URI de recurso | string | Falso  a| 
+String JSON contendo o URI associado ao evento. Incluída apenas para eventos relacionados a operações de API. Os valores definidos são:
+
+* Comprimento mínimo: 3
+* Comprimento máximo: 4095
+
+
+
+
+| URL da coleção de recursos | array[string] | Falso  a| 
+Matriz JSON de strings JSON, cada uma indicando a URL de acesso completa do recurso associado ao evento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 1023
+
+
+
+
+| resourceMethod | string | Falso  a| 
+String JSON contendo o método HTTP invocado. Incluída apenas para eventos relacionados a operações de API. Os valores definidos são:
+
+* "opções" - operação da API OPTIONS
+* "post" - Operação POST da API
+* "get" - Operação GET da API
+* "put" - Operação de API PUT
+* "excluir" - operação de API DELETE
+
+
+
+
+| resourceMethodResult | string | Falso  a| 
+String JSON contendo o resultado do método HTTP invocado. Incluída apenas para eventos relacionados às operações da API. Os valores definidos são:
+
+* A expressão regular definida é: "^[1-5][0-9]{2}$"
+
+
+
+
+| ID do usuário | string | Falso  a| 
+String JSON contendo o ID do usuário associado a um evento. Incluída apenas para eventos associados a ações iniciadas pelo usuário. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| ID da conta | string | Falso  a| 
+String JSON contendo o ID da conta associada a um evento. Incluída apenas para eventos associados a uma conta. Os valores definidos são:
+
+* Conforme o esquema de identificador Astra
+
+
+
+
+| dados | link:#data["dados"] | Falso  a| 
+Objeto JSON contendo informações adicionais específicas do evento.
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-notification",
+  "version": "1.3",
+  "id": "03c645d6-75f0-59b0-95f2-862ae344ea27",
+  "name": "astra.app.discovery.failed",
+  "sequenceCount": 48923,
+  "summary": "Application Discovery Failed",
+  "eventTime": "2020-08-06T12:24:51.846543Z",
+  "source": "composite-compute",
+  "resourceID": "f670bf11-8850-44bd-b330-815af6186a06",
+  "additionalResourceIDs": [
+    "84dfee99-b7b2-46d2-9021-0a1a9a5df1d6",
+    "abb32003-07b9-49b1-9938-1cf6d2f33566"
+  ],
+  "resourceType": "application/astra-app",
+  "correlationID": "3c603442-cfca-4af9-9f1b-40dde5c7a806",
+  "severity": "warning",
+  "class": "user",
+  "description": "Discovering the application 'mysql' was unsuccessful. K8s error 442. Application marked in state 'error'.",
+  "destinations": [
+    "notification"
+  ],
+  "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/managedClusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/apps/f670bf11-8850-44bd-b330-815af6186a06",
+  "resourceCollectionURL": [
+    "https://www.astra.io/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06",
+    "https://www.astra.io/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06"
+  ],
+  "userID": "abda967f-cd2c-4237-908e-99266648c553",
+  "accountID": "f126d214-bccf-4558-86b4-2137a41e734f",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+dados
+
+Objeto JSON contendo informações adicionais específicas do evento.
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| ttl | número | Falso  a| 
+Número JSON que indica o número de segundos (desde o eventTime) que o evento será retido. Este campo só é incluído quando um evento é excluído automaticamente após o número de segundos especificado. Quando excluído, se o evento tiver um destino de notificação, todas as notificações associadas também serão excluídas. Quando excluído, se o evento tiver um destino de banner, o banner também será removido. A ausência deste campo (ou um valor de "0") significa que um evento não será excluído automaticamente.
+
+
+
+| isAcknowledgeable | string | Falso  a| 
+String JSON que indica se o banner pode ser fechado. Os valores definidos são:
+
+* "verdadeiro" - O banner pode ser fechado
+* "falso" - O banner não pode ser fechado
+
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

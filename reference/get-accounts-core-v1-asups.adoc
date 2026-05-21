@@ -1,0 +1,556 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-asups.html 
+summary: Liste todos os recursos ASUP 
+---
+= Liste todos os recursos ASUP
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| incluir | string | consulta | Falso  a| 
+Indica quais campos devem ser retornados ao listar uma coleção.
+
+Exemplos de URL: "include=id", "include=id,name"
+
+Exemplos OpenAPI: "id"
+
+
+
+| limite | string | consulta | Falso  a| 
+Indica o número máximo de recursos a serem retornados ao listar uma coleção.
+
+Exemplos de URL: "limit=2"
+
+Exemplos OpenAPI: "2"
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| itens | array[Qualquer um de: link:#asup_1_0_get_response_body["asup_1.0_get_response_body"], array[]] | Verdadeiro  a| 
+
+
+
+| metadados | link:#type_astra_metadata_list["type_astra_metadata_list"] | Verdadeiro  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asups",
+  "version": "1.0",
+  "items": [
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "80796606-79ba-480b-966c-e4c600fbf623",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "running",
+      "uploadStateDetails": [],
+      "triggerType": "manual",
+      "dataWindowStart": "2020-08-05T12:24:00.000000Z",
+      "dataWindowEnd": "2020-08-06T12:24:52.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    },
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "6503131d-8b36-4434-b34f-73661ae8100b",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "completed",
+      "uploadStateDetails": [],
+      "triggerType": "scheduled",
+      "dataWindowStart": "2020-08-04T13:30:00.000000Z",
+      "dataWindowEnd": "2020-08-05T13:30:00.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "modificationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+asup_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-asup"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| creationState | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o estado de criação do AutoSupport bundle. Para os estados "concluído" e "parcial", o bundle pode ser baixado realizando uma requisição GET para o URI do recurso com um cabeçalho Accept contendo "_/_" ou "application/gzip". Os valores definidos são:
+
+* "running" - AutoSupport a geração de pacotes está ocorrendo normalmente.
+* "Concluído" - a geração do pacote AutoSupport foi concluída.
+* "partial" - AutoSupport a geração do pacote foi concluída, mas alguns dados não foram incluídos no pacote.
+* "failed" - AutoSupport a geração do pacote está em estado de falha permanente.
+
+
+
+
+| creationStateDetails | array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Verdadeiro  a| 
+Matriz JSON de objetos JSON que lista detalhes adicionais sobre o motivo pelo qual "creationState" foi alterado para "parcial" ou "falhou". Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Itens mínimos: 0
+
+
+
+
+| carregar | string | Verdadeiro  a| 
+String JSON contendo um valor que indica se o pacote AutoSupport deve ser carregado após a criação bem-sucedida. Os valores definidos são:
+
+* "verdadeiro" - Carregar o pacote AutoSupport.
+* "falso" - Não faça o upload do AutoSupport bundle.
+
+
+
+
+| uploadState | string | Falso  a| 
+String JSON contendo um valor que indica o estado do upload do pacote AutoSupport, caso tenha sido solicitado. Os valores definidos são:
+
+* "pendente" - o upload do pacote AutoSupport está agendado para quando a criação do pacote AutoSupport for concluída ("creationState" está "em execução").
+* "blocked" - AutoSupport o envio do pacote não foi tentado porque o pacote não foi criado ("creationState" é "failed") ou o envio foi bloqueado porque não há licença.
+* "Em execução" - o upload do pacote AutoSupport está sendo executado normalmente ("creationState" está "concluído" ou "parcial").
+* "completed" - AutoSupport o envio do pacote foi finalizado.
+* "Falha" - AutoSupport o envio do pacote está em estado de falha permanente.
+
+
+
+
+| uploadStateDetails | array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falso  a| 
+Matriz JSON de objetos JSON que lista detalhes adicionais sobre o motivo pelo qual "uploadState" foi para "falhou". Se não houver detalhes disponíveis, essa matriz estará vazia.
+
+* Itens mínimos: 0
+
+
+
+
+| triggerType | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o que desencadeou a criação do recurso ASUP. Os valores definidos são:
+
+* "manual" - O recurso ASUP e o pacote AutoSupport associado foram criados manualmente.
+* "Agendado" - O recurso ASUP e o pacote AutoSupport associado foram criados de acordo com um agendamento configurado.
+
+
+
+
+| dataWindowStart | string | Verdadeiro  a| 
+String JSON contendo um timestamp indicando o horário de início da janela de coleta de dados do pacote AutoSupport. O padrão é 24 horas antes do valor da chave "dataWindowEnd". Deve ocorrer antes do valor da chave "dataWindowEnd". O máximo é 7 dias antes do horário atual da solicitação. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| dataWindowEnd | string | Verdadeiro  a| 
+String JSON contendo um carimbo de data/hora indicando o horário de término da janela de coleta de dados do pacote AutoSupport. O padrão é o horário atual da solicitação. Os valores definidos são:
+
+* Em conformidade com o esquema de data e hora ISO-8601
+
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na criação, um objeto de metadados será criado sem rótulos.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| continuar | string | Falso  a| 
+
+
+
+| contar | número | Falso  a| 
+
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

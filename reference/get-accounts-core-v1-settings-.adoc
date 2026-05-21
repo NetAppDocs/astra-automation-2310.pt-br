@@ -1,0 +1,525 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-settings-.html 
+summary: Recuperar uma configuração 
+---
+= Recuperar uma configuração
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+Retorna o recurso da API de Configurações armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| ID_da_configuração | string | caminho | Verdadeiro  a| 
+ID da coleção de configurações a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Setting API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "application/astra-setting"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo o nome da configuração, em notação hierárquica de ponto (.). Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+* Essa string é validada internamente para evitar ataques de XSS, Unicode, travessia de diretório e injeção de SQL. Esse valor é especificado pelo configmap que é carregado em tempo de execução e não pode ser atualizado pelo usuário.
+
+
+
+
+| currentConfig | link:#type_json["tipo_json"] | Verdadeiro  a| 
+Objeto JSON contendo chaves e valores que compõem a configuração atual para esta opção. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. Os valores padrão são fornecidos pelo configmap. Depois que os valores padrão forem alterados pelo usuário, eles não serão sobrescritos.
+
+
+
+| desiredConfig | link:#type_json["tipo_json"] | Falso  a| 
+Objeto JSON contendo chaves e valores que compõem a configuração solicitada para esta definição. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. O objeto não existe até ser especificado. Quando especificado, isso faz com que o serviço de funcionalidade notifique o serviço correspondente para solicitar que a configuração desejada possa ser aplicada. O serviço correspondente pode então realizar a validação e aplicar a configuração desejada à configuração atual.
+
+
+
+| configSchema | link:#type_json_schema["tipo_json_schema"] | Verdadeiro  a| 
+Objeto JSON contendo o esquema JSON para a propriedade config neste recurso. Deve estar em conformidade com o JSON Schema Draft 7. Se valores de config estiverem presentes no recurso, a validação em relação ao configSchema indicado é obrigatória. Como convenção comum, recomenda-se que as configurações tenham um campo "isEnabled", quando apropriado. O campo "isEnabled" contém um valor que indica se a configuração está ativada ("true") ou desativada ("false").
+
+
+
+| estado | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o estado operacional da aplicação. Os valores definidos são:
+
+* "válido" - A configuração atual corresponde à configuração desejada.
+* "pending" - A configuração desejada está sendo aplicada.
+* "erro" - A configuração desejada não pode ser aplicada.
+
+
+
+
+| stateUnready | array[string] | Verdadeiro  a| 
+Matriz JSON de strings JSON, cada uma indicando um motivo pelo qual a configuração não foi aplicada com sucesso. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 127
+
+
+
+
+| metadados | link:#type_astra_metadata_update["type_astra_metadados_update"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.1",
+  "id": "ea510866-47d3-5130-8468-563df4cd6a28",
+  "name": "astra.account.smtp",
+  "currentConfig": {
+    "credential": "",
+    "isEnabled": "false",
+    "port": 587,
+    "relayServer": "smtp.sendgrid.net"
+  },
+  "configSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "astra.account.smtp",
+    "type": "object",
+    "properties": {
+      "credential": {
+        "type": "string",
+        "description": "The credential ID for SMTP authentication."
+      },
+      "isEnabled": {
+        "type": "string",
+        "description": "This property determines if this setting is enabled or not."
+      },
+      "port": {
+        "type": "integer",
+        "description": "The SMTP port. For an unencrypted or a TLS connection, use port 25, 2525, or 587."
+      },
+      "relayServer": {
+        "type": "string",
+        "description": "This setting is sometimes referred to as the external SMTP server or the SMTP relay."
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "relayServer",
+      "port",
+      "isEnabled"
+    ]
+  },
+  "state": "valid",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_json
+
+Objeto JSON contendo chaves e valores que compõem a configuração atual para esta opção. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. Os valores padrão são fornecidos pelo configmap. Depois que os valores padrão forem alterados pelo usuário, eles não serão sobrescritos.
+
+[role="api-collapsible-fifth-title"]
+tipo_json
+
+Objeto JSON contendo chaves e valores que compõem a configuração solicitada para esta definição. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. O objeto não existe até ser especificado. Quando especificado, isso faz com que o serviço de funcionalidade notifique o serviço correspondente para solicitar que a configuração desejada possa ser aplicada. O serviço correspondente pode então realizar a validação e aplicar a configuração desejada à configuração atual.
+
+[role="api-collapsible-fifth-title"]
+propriedades
+
+[role="api-collapsible-fifth-title"]
+tipo_json_schema
+
+Objeto JSON contendo o esquema JSON para a propriedade config neste recurso. Deve estar em conformidade com o JSON Schema Draft 7. Se valores de config estiverem presentes no recurso, a validação em relação ao configSchema indicado é obrigatória. Como convenção comum, recomenda-se que as configurações tenham um campo "isEnabled", quando apropriado. O campo "isEnabled" contém um valor que indica se a configuração está ativada ("true") ou desativada ("false").
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| $schema | string | Verdadeiro  a| 
+
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| propriedades | link:#properties["propriedades"] | Verdadeiro  a| 
+
+
+
+| additionalProperties | booleano | Verdadeiro  a| 
+
+
+
+| obrigatório | array[string] | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadados_update
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Está em conformidade com o esquema de metadados Astra. Se não for especificado na atualização, os rótulos do objeto de metadados, creationTimestamp e createdBy, serão preservados sem modificação.
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Falso  a| 
+
+
+
+| CriaçãoTimestamp | string | Falso  a| 
+
+
+
+| Alteração do Timestamp | string | Falso  a| 
+
+
+
+| CreatedBy | string | Falso  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

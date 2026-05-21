@@ -1,0 +1,474 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clusters-storageclasses-.html 
+summary: Recuperar uma classe de armazenamento para um cluster 
+---
+= Recuperar uma classe de armazenamento para um cluster
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
+
+Retorna o recurso da API Storage Class armazenado no corpo da resposta JSON.
+
+
+
+== Parâmetros
+
+[cols="5*"]
+|===
+| Nome | Tipo | Em | Obrigatório | Descrição 
+
+
+| id_da_conta | string | caminho | Verdadeiro  a| 
+ID do recurso de conta que o contém
+
+* exemplo: {{.Account}}
+
+
+
+
+| cluster_id | string | caminho | Verdadeiro  a| 
+ID do recurso de cluster que o contém
+
+
+
+| storageClass_id | string | caminho | Verdadeiro  a| 
+ID da coleção storageClass a ser listada
+
+|===
+
+
+== Resposta
+
+[source]
+----
+Status: 200, Returns the stored Storage Class API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+Tipo de mídia do recurso. Os valores definidos são:
+
+* "aplicação/astra-storageClass"
+
+
+
+
+| versão | string | Verdadeiro  a| 
+Versão do recurso. Os valores definidos são:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | string | Verdadeiro  a| 
+Identificador globalmente único do recurso. Os valores definidos são:
+
+* Em conformidade com o esquema UUIDv4
+
+
+
+
+| nome | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o nome da classe de armazenamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| provisionador | string | Verdadeiro  a| 
+String JSON contendo um valor que indica o provisionador associado à classe de armazenamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| disponível | string | Verdadeiro  a| 
+String JSON que indica se a classe de armazenamento está disponível para o cluster ou se pode ser adicionada ao cluster quando este estiver sob gerenciamento. Os valores definidos são:
+
+* "disponível" - A classe de armazenamento está disponível para uso
+* "elegível" - A classe de armazenamento é elegível para ser usada pelo cluster quando estiver sob gerenciamento
+* "inelegível" - A classe de armazenamento não pode ser usada pelo cluster quando está sob gerenciamento
+
+
+
+
+| allowVolumeExpansion | string | Verdadeiro  a| 
+String JSON que indica se a classe de armazenamento permite expansão de volume. Os valores definidos são:
+
+* "verdadeiro" - A classe de armazenamento permite expansão de volume
+* "falso" - A classe de armazenamento não permite expansão de volume
+* "Indisponível" - Não se sabe se a classe de armazenamento permite expansão de volume
+
+
+
+
+| reclaimPolicy | string | Verdadeiro  a| 
+String JSON contendo um valor específico da nuvem que indica a política de retenção da classe de armazenamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| volumeBindingMode | string | Verdadeiro  a| 
+String JSON contendo um valor específico da nuvem que indica o modo de vinculação para a classe de armazenamento. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| isDefault | string | Falso  a| 
+String JSON que indica se a storage class contém a anotação padrão. Os valores definidos são:
+
+* "true" - A classe de armazenamento contém a anotação padrão
+
+
+
+
+| maxSnapshotCount | número | Falso  a| 
+Número JSON que indica quantos snapshots são suportados. Essas informações são associadas às classes de armazenamento fornecidas por NetApp.
+
+
+
+| maxBackupCount | número | Falso  a| 
+Número JSON que indica quantos backups são suportados. Essas informações são associadas às classes de armazenamento fornecidas por NetApp.
+
+
+
+| preço | string | Falso  a| 
+String JSON indicando as unidades monetárias por unidade de tempo para a classe de armazenamento. Essas informações são associadas às classes de armazenamento fornecidas por NetApp. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 63
+
+
+
+
+| moeda | string | Falso  a| 
+String JSON que indica o código ISO 4217 de três letras para a moeda em que o preço é medido. Esta informação está associada às classes de armazenamento fornecidas por NetApp. Os valores definidos são:
+
+* Comprimento mínimo: 1
+* Comprimento máximo: 255
+
+
+
+
+| desempenho | número | Falso  a| 
+Número JSON que indica o objetivo de nível de serviço (SLO) de desempenho em MBps. Essas informações são associadas às classes de armazenamento fornecidas por NetApp.
+
+
+
+| resiliência | string | Falso  a| 
+String JSON que indica a configuração de resiliência para o armazenamento. Essas informações são associadas às classes de armazenamento fornecidas por NetApp. Os valores definidos são:
+
+* "regional" - O volume ficará indisponível se uma determinada região ficar indisponível
+* "multisite" - O volume continuará disponível se uma determinada região ficar indisponível
+
+
+
+
+| metadados | link:#type_astra_metadata["tipo_metadados_astra"] | Verdadeiro  a| 
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageClass",
+  "version": "1.1",
+  "id": "ad9be22b-53c7-540c-8647-76afe2878952",
+  "name": "my-storage-class",
+  "provisioner": "csi.trident.netapp.io",
+  "available": "eligible",
+  "allowVolumeExpansion": "true",
+  "reclaimPolicy": "recycle",
+  "volumeBindingMode": "immediate",
+  "isDefault": "true",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+
+
+| invalidParams | array[link:#invalidParams["invalidParams"]] | Falso  a| 
+Lista de parâmetros de consulta inválidos
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Resposta
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Erro
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| tipo | string | Verdadeiro  a| 
+
+
+
+| título | string | Verdadeiro  a| 
+
+
+
+| detalhe | string | Verdadeiro  a| 
+
+
+
+| status | string | Verdadeiro  a| 
+
+
+
+| ID de correlação | string | Falso  a| 
+
+|===
+.Exemplo de resposta de erro
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definições
+
+.Ver definições
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+tipo_astra_label
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+
+
+
+| valor | string | Verdadeiro  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+tipo_metadados_astra
+
+Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os valores definidos são:
+
+* Conforme o esquema de metadados Astra
+
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| etiquetas | array[link:#type_astra_label["tipo_astra_label"]] | Verdadeiro  a| 
+
+
+
+| CriaçãoTimestamp | string | Verdadeiro  a| 
+
+
+
+| Alteração do Timestamp | string | Verdadeiro  a| 
+
+
+
+| CreatedBy | string | Verdadeiro  a| 
+
+
+
+| modifiedBy | string | Falso  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Nome | Tipo | Obrigatório | Descrição 
+
+
+| nome | string | Verdadeiro  a| 
+Nome do parâmetro de consulta inválido
+
+
+
+| razão | string | Verdadeiro  a| 
+Motivo pelo qual o parâmetro de consulta é inválido
+
+|===
+====

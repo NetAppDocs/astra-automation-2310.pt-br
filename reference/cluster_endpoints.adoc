@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_endpoints.html 
+summary: 'Pontos de extremidade do cluster da API Astra (ACC)' 
+---
+= Pontos de extremidade do cluster da API Astra (ACC)
+:allow-uri-read: 
+
+
+A Cluster API representa clusters Kubernetes não gerenciados.
