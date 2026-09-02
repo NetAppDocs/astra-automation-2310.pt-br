@@ -18,6 +18,7 @@ Há vários recursos de suporte disponíveis com a API REST do Astra Control que
 
 
 
+[[api-resources]]
 == Recursos de API
 
 Há vários recursos do Astra expostos por meio de recursos de API que fornecem informações de diagnóstico e suporte.

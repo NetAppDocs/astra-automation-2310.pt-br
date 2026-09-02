@@ -7,6 +7,7 @@ summary: Liste todos os pacotes
 ---
 = Liste todos os pacotes
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se c
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -77,6 +79,7 @@ Exemplos OpenAPI: "2"
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -128,6 +131,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -173,6 +177,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -223,6 +228,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -268,6 +274,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -313,11 +320,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -333,9 +342,11 @@ type_astra_stateTransition
 | para | array[string] | Verdadeiro  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -359,6 +370,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -393,6 +405,7 @@ String JSON representando a tag/versão desta imagem. Os valores definidos são:
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 imagens
 
@@ -440,6 +453,7 @@ String JSON representando o resumo desta imagem. Os valores definidos são:
 Matriz JSON de objetos JSON que descrevem as imagens necessárias para instalar ou atualizar a imagem atual.
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -463,6 +477,7 @@ String JSON que descreve o nome do componente. Os valores definidos são:
 Matriz JSON de strings JSON que definem a versão do componente necessária para instalar a imagem atual.
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 artefatos
 
@@ -512,6 +527,7 @@ String JSON contendo a versão do artefato, se fornecida. Os valores definidos s
 Matriz JSON de objetos JSON que descrevem os componentes instalados necessários para instalar/atualizar a imagem atual.
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 arquivos
 
@@ -554,6 +570,7 @@ String JSON contendo o conteúdo do arquivo. Os valores definidos são:
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -579,6 +596,7 @@ String JSON que descreve a versão máxima para a qual o pacote pode ser atualiz
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 dependências
 
@@ -613,6 +631,7 @@ String JSON que descreve a versão máxima necessária para esse componente. Os 
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -628,6 +647,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 tipo_metadados_astra
 
@@ -660,6 +680,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[package_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 pacote_1.0_obter_corpo_da_resposta
 
@@ -794,6 +815,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -829,6 +851,7 @@ type_astra_metadata_list
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

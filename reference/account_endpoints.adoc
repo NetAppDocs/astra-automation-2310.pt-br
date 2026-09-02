@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade da conta da API Astra (ACC)'
 ---
 = Pontos de extremidade da conta da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A Account API representa locatários isolados em um sistema multitenant.

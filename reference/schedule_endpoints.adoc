@@ -7,6 +7,7 @@ summary: 'Endpoints de agendamento da API Astra (ACC)'
 ---
 = Endpoints de agendamento da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Schedule permite definir diversas operações de proteção de dados agendadas.

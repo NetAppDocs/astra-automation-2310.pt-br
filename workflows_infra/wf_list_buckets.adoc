@@ -18,6 +18,7 @@ Você pode listar os buckets do S3 definidos para uma conta específica do Astra
 
 
 
+[[1-list-the-buckets]]
 === 1. Liste os buckets
 
 Execute a seguinte chamada de API REST para listar os buckets.

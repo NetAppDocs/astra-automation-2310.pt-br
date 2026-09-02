@@ -18,6 +18,7 @@ Você pode listar os namespaces disponíveis.
 
 
 
+[[1-list-the-namespaces]]
 === 1. Liste os namespaces
 
 Execute a seguinte chamada de API REST para listar os namespaces.

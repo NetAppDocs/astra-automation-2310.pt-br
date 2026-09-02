@@ -7,6 +7,7 @@ summary: Apagar uma nuvem
 ---
 = Apagar uma nuvem
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
@@ -15,6 +16,7 @@ Exclui a instância de nuvem solicitada e quaisquer clusters e volumes não gere
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID da coleção de nuvens a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the cloud resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -139,6 +144,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -229,6 +236,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -274,11 +282,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -296,6 +306,7 @@ Nome do parâmetro de consulta inválido
 Motivo pelo qual o parâmetro de consulta é inválido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

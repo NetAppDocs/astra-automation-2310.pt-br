@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade do cluster da API Astra (ACC)'
 ---
 = Pontos de extremidade do cluster da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A Cluster API representa clusters Kubernetes não gerenciados.

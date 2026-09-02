@@ -18,6 +18,7 @@ Pode eliminar uma cópia de segurança associada a uma aplicação.
 
 
 
+[[before-you-begin]]
 === Antes de começar
 
 Você deve ter o seguinte:
@@ -28,6 +29,7 @@ Você deve ter o seguinte:
 
 
 
+[[1-delete-the-backup]]
 === 1. Eliminar a cópia de segurança
 
 Execute a seguinte chamada de API REST.

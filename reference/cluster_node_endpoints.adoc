@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade do nó de cluster da API Astra (ACC)'
 ---
 = Pontos de extremidade do nó de cluster da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de nó de cluster fornece acesso aos nós associados a um cluster.

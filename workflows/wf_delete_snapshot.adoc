@@ -18,6 +18,7 @@ Pode eliminar um instantâneo associado a uma aplicação.
 
 
 
+[[before-you-begin]]
 === Antes de começar
 
 Você deve ter o seguinte:
@@ -28,6 +29,7 @@ Você deve ter o seguinte:
 
 
 
+[[1-delete-the-snapshot]]
 === 1. Eliminar o instantâneo
 
 Execute a seguinte chamada de API REST.

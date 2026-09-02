@@ -7,6 +7,7 @@ summary: Excluir um recurso AppMirror de um aplicativo
 ---
 = Excluir um recurso AppMirror de um aplicativo
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
@@ -24,6 +25,7 @@ Remove o recurso de API AppMirror especificado. Inicia um processo para remover 
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -50,6 +52,7 @@ ID da appMirror coleção a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -58,6 +61,7 @@ Status: 204, Indicates if the appMirror resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -103,6 +107,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -153,6 +158,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -198,6 +204,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -243,11 +250,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

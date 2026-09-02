@@ -18,18 +18,21 @@ Você pode criar uma aplicação gerenciada com base em uma aplicação já conh
 
 
 
+[[1-select-the-namespace]]
 === 1. Selecione o namespace
 
 Execute o fluxo de trabalho link:../workflows/wf_list_namespaces.html["Liste os namespaces"] e selecione o namespace.
 
 
 
+[[2-select-the-cluster]]
 === 2. Selecione o cluster
 
 Execute o fluxo de trabalho link:../workflows_infra/wf_list_clusters.html["Liste os clusters"] e selecione o cluster.
 
 
 
+[[3-manage-the-application]]
 === 3. Gerencie o aplicativo
 
 Execute a seguinte chamada de API REST para gerenciar o aplicativo.

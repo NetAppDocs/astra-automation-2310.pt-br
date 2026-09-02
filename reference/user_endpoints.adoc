@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade do usuário da Astra API (ACC)'
 ---
 = Pontos de extremidade do usuário da Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Usuário representa os usuários que podem interagir com o sistema.

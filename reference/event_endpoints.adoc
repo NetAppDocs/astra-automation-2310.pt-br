@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade de eventos da API Astra (ACC)'
 ---
 = Pontos de extremidade de eventos da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Eventos fornece acesso aos eventos que ocorrem no sistema.

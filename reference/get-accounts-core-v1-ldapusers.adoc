@@ -7,6 +7,7 @@ summary: Listar todos os usuários LDAP
 ---
 = Listar todos os usuários LDAP
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapUsers`#
@@ -15,6 +16,7 @@ Retorna um array JSON de objetos JSON contendo os resultados da URL da requisiç
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -77,6 +79,7 @@ Exemplos OpenAPI: "+++<continue token="" from="" collection="" metadata="">+++"+
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -126,6 +129,7 @@ Status: 200, Returns a JSON array of JSON objects containing the results of the 
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -171,6 +175,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -216,6 +221,7 @@ Status: 406, Not acceptable
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -261,6 +267,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -311,11 +318,13 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -331,6 +340,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 tipo_metadados_astra
 
@@ -363,6 +373,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[ldapUser_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 ldapUser_1.0_get_response_body
 
@@ -446,6 +457,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -481,6 +493,7 @@ type_astra_metadata_list
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

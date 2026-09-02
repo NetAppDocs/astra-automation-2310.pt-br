@@ -23,6 +23,7 @@ Opcionalmente, é possível integrar o Astra Control Center a um servidor LDAP (
 
 
 
+[[overview-of-the-implementation-process]]
 == Visão geral do processo de implementação
 
 Em um alto nível, há várias etapas que você precisa executar para configurar um servidor LDAP para fornecer autenticação para usuários Astra.
@@ -39,6 +40,7 @@ NOTE: Enquanto as etapas apresentadas abaixo estão em uma sequência, em alguns
 
 
 
+[[requirements-and-limitations]]
 == Requisitos e limitações
 
 Antes de configurar o Astra para usar LDAP para autenticação, você deve consultar os fundamentos de configuração do Astra apresentados abaixo, incluindo limitações e opções de configuração.

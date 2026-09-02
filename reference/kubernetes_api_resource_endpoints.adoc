@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) endpoints de recursos da API do Kubernetes'
 ---
 = Astra API (ACC) endpoints de recursos da API do Kubernetes
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Recursos do Kubernetes fornece acesso somente leitura aos recursos da API do Kubernetes para filtrar aqueles suportados pelo Astra em um determinado cluster.

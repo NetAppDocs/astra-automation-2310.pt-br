@@ -7,6 +7,7 @@ summary: Excluir um grupo para um usuário
 ---
 = Excluir um grupo para um usuário
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
@@ -21,6 +22,7 @@ Remove o recurso da API de grupo especificado.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -47,6 +49,7 @@ ID da coleção de grupos a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -55,6 +58,7 @@ Status: 204, Indicates if the group resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -100,6 +104,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -145,6 +150,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -190,11 +196,13 @@ Status: 403, Forbidden
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

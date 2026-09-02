@@ -7,6 +7,7 @@ summary: Recuperar um bucket
 ---
 = Recuperar um bucket
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
@@ -15,6 +16,7 @@ Retorna o recurso da API Bucket armazenado no corpo da resposta JSON.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID da coleção de buckets a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -183,6 +186,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -228,6 +232,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -278,6 +283,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -323,6 +329,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -368,14 +375,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -399,6 +409,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[s3]]
 [role="api-collapsible-fifth-title"]
 s3
 
@@ -426,6 +437,7 @@ String JSON contendo o nome do bucket S3. Os valores definidos são:
 
 
 |===
+[[gcp]]
 [role="api-collapsible-fifth-title"]
 gcp
 
@@ -444,6 +456,7 @@ String JSON contendo o nome do bucket do Google Cloud que está sendo usado como
 
 
 |===
+[[azure]]
 [role="api-collapsible-fifth-title"]
 azure
 
@@ -471,6 +484,7 @@ String JSON contendo o nome do blob do Azure subjacente. Os valores definidos s�
 
 
 |===
+[[bucketParameters]]
 [role="api-collapsible-fifth-title"]
 bucketParameters
 
@@ -495,6 +509,7 @@ Objeto JSON que fornece parâmetros do protocolo Google Cloud.
 Objeto JSON que fornece parâmetros do protocolo Azure.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -510,6 +525,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadados_update
 
@@ -542,6 +558,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

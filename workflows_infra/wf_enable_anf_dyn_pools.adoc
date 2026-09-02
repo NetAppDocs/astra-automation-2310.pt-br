@@ -21,6 +21,7 @@ NOTE: Os pools de ANF dinâmicos são recursos das aplicações gerenciadas pelo
 
 
 
+[[1-add-the-azure-subscription-identifier]]
 === 1. Adicione o identificador de assinatura do Azure
 
 Execute a seguinte chamada de API REST.
@@ -72,18 +73,21 @@ curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/acc
 ----
 
 
+[[2-add-a-bucket-if-needed]]
 === 2. Adicione um balde, se necessário
 
 Você deve adicionar um bucket ao aplicativo gerenciado, se necessário.
 
 
 
+[[3-take-a-backup-of-the-managed-app]]
 === 3. Faça um backup do aplicativo gerenciado
 
 Execute o fluxo de link:../workflows/wf_create_backup.html["Crie uma cópia de segurança para uma aplicação"]trabalho . O pool de capacidade onde o volume persistente original está presente irá expandir e diminuir automaticamente.
 
 
 
+[[4-review-the-event-log]]
 === 4. Reveja o registo de eventos
 
 Os eventos de atividade são registados durante a cópia de segurança. Execute o fluxo de trabalho link:../workflows/wf_list_notifications.html["Liste as notificações"] para exibir as mensagens.

@@ -7,6 +7,7 @@ summary: Crie um novo gancho de execução
 ---
 = Crie um novo gancho de execução
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
@@ -15,6 +16,7 @@ Indica os valores desejados para o recurso da API Execution Hook a ser criado.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID do recurso de conta que o contém
 |===
 
 
+[[request-body]]
 == Corpo da solicitação
 
 Indica os valores desejados para o recurso da API Execution Hook a ser criado.
@@ -182,6 +185,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -367,6 +371,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -412,6 +417,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -462,6 +468,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -507,6 +514,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -552,6 +560,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -597,11 +606,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[matchingCriteria]]
 [role="api-collapsible-fifth-title"]
 matchingCriteria
 
@@ -619,6 +630,7 @@ String JSON que identifica o tipo de critério de correspondência.
 String JSON contendo uma expressão regular para corresponder ao tipo de correspondência fornecido. Sintaxe da expressão regular: https://github.com/google/re2/wiki/Syntax[]
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -634,6 +646,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadados_update
 
@@ -666,6 +679,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[matchingCriteria]]
 [role="api-collapsible-fifth-title"]
 matchingCriteria
 
@@ -683,6 +697,7 @@ String JSON que identifica o tipo de critério de correspondência.
 String JSON contendo uma expressão regular para corresponder ao tipo de correspondência fornecido. Sintaxe da expressão regular: https://github.com/google/re2/wiki/Syntax[]
 
 |===
+[[type_k8s_label]]
 [role="api-collapsible-fifth-title"]
 type_k8s_label
 
@@ -698,6 +713,7 @@ type_k8s_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[matchingContainers]]
 [role="api-collapsible-fifth-title"]
 matchingContainers
 
@@ -730,6 +746,7 @@ String JSON contendo o nome do contêiner correspondente.
 String JSON contendo o nome do namespace do pod do contêiner correspondente.
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -747,6 +764,7 @@ Nome do parâmetro de consulta inválido
 Motivo pelo qual o parâmetro de consulta é inválido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

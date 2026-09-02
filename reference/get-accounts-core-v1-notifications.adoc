@@ -7,6 +7,7 @@ summary: Listar todas as notificações
 ---
 = Listar todas as notificações
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications`#
@@ -15,6 +16,7 @@ Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se c
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -110,6 +112,7 @@ Exemplos OpenAPI: "+++<continue token="" from="" collection="" metadata="">+++"+
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -165,6 +168,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -210,6 +214,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -260,6 +265,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -305,6 +311,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -350,11 +357,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[data]]
 [role="api-collapsible-fifth-title"]
 dados
 
@@ -378,6 +387,7 @@ String JSON que indica se o banner pode ser fechado. Os valores definidos são:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -393,6 +403,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 tipo_metadados_astra
 
@@ -425,6 +436,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[notification_1_3_get_response_body]]
 [role="api-collapsible-fifth-title"]
 notification_1.3_get_response_body
 
@@ -679,6 +691,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -714,6 +727,7 @@ type_astra_metadata_list
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

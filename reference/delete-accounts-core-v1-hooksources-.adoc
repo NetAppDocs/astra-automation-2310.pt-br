@@ -7,6 +7,7 @@ summary: Excluir uma origem de gancho
 ---
 = Excluir uma origem de gancho
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
@@ -15,6 +16,7 @@ Remove o recurso da API Hook Source especificado.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID da coleção hookSource a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the hookSource resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -139,6 +144,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -229,11 +236,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

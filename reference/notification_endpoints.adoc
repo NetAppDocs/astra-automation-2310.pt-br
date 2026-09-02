@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade de notificação da API Astra (ACC)'
 ---
 = Pontos de extremidade de notificação da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Notificações fornece acesso individualizado a eventos com um destino de notificação.

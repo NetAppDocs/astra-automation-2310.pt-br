@@ -21,12 +21,14 @@ NOTE: Esses fluxos de trabalho podem ser expandidos e aprimorados pelo NetApp a 
 
 
 
+[[general-preparation]]
 == Preparação geral
 
 Antes de usar qualquer um dos workflows do Astra, revise link:../get-started/prepare_to_use_workflows.html["Prepare-se para usar os fluxos de trabalho"]o .
 
 
 
+[[workflow-categories]]
 == Categorias de fluxo de trabalho
 
 Os fluxos de trabalho de gerenciamento são organizados em diferentes categorias para facilitar a localização do que você deseja.
@@ -49,12 +51,14 @@ Os fluxos de trabalho de gerenciamento são organizados em diferentes categorias
 |===
 
 
+[[additional-considerations]]
 == Considerações adicionais
 
 Há várias considerações adicionais ao usar os fluxos de trabalho de gerenciamento.
 
 
 
+[[cloning-an-app]]
 === Clonar uma aplicação
 
 Há algumas coisas a considerar ao clonar um aplicativo. Os parâmetros descritos abaixo fazem parte da entrada JSON.

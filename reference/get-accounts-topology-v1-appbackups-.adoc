@@ -7,6 +7,7 @@ summary: Recuperar um backup de aplicativo
 ---
 = Recuperar um backup de aplicativo
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
@@ -15,6 +16,7 @@ Retorna o recurso da API de backup de aplicativos armazenado no corpo da respost
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID da appBackup coleção a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -203,6 +206,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -248,6 +252,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -298,6 +303,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -343,6 +349,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -388,6 +395,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -433,14 +441,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -464,6 +475,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -479,6 +491,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 tipo_metadados_astra
 
@@ -511,6 +524,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

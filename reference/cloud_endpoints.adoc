@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade na nuvem da API Astra (ACC)'
 ---
 = Pontos de extremidade na nuvem da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A Cloud API fornece acesso a recursos na nuvem, permitindo que os clientes se conectem a nuvens específicas para gerenciar clusters e aplicativos.

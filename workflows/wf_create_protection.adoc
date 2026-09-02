@@ -18,12 +18,14 @@ Você pode criar uma política de proteção de dados com base em um ou mais hor
 
 
 
+[[1-select-the-app]]
 === 1. Selecione a aplicação
 
 Execute o fluxo de trabalho link:../workflows/wf_list_man_apps.html["Liste as aplicações"] e selecione a aplicação pretendida.
 
 
 
+[[2-create-the-protection]]
 === 2. Crie a proteção
 
 Execute a seguinte chamada de API REST para criar uma política de proteção para um aplicativo específico.

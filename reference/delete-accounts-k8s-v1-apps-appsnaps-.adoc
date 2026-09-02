@@ -7,6 +7,7 @@ summary: Excluir um Snapshot do aplicativo
 ---
 = Excluir um Snapshot do aplicativo
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}`#
@@ -21,6 +22,7 @@ Remove o recurso Application Snapshot API especificado.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -47,6 +49,7 @@ ID da coleção appSnap a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -55,6 +58,7 @@ Status: 204, Indicates if the appSnap resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -100,6 +104,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -150,6 +155,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -195,6 +201,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -240,6 +247,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -285,11 +293,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

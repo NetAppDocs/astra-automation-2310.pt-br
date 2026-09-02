@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade de recursos da API Astra (ACC)'
 ---
 = Pontos de extremidade de recursos da API Astra (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A Feature API fornece acesso somente leitura aos recursos de sinalização de funcionalidades para determinar quais funcionalidades estão habilitadas ou desabilitadas no sistema.

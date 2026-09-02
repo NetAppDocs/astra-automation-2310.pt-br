@@ -18,18 +18,21 @@ Você pode listar as classes de armazenamento disponíveis.
 
 
 
+[[1-select-the-cloud]]
 === 1. Selecione a nuvem
 
 Execute o fluxo de trabalho link:../workflows_infra/wf_list_clouds.html["Liste as nuvens"] e selecione a nuvem na qual você estará trabalhando.
 
 
 
+[[2-select-the-cluster]]
 === 2. Selecione o cluster
 
 Execute o fluxo de trabalho link:../workflows_infra/wf_list_clusters.html["Liste os clusters"] e selecione o cluster.
 
 
 
+[[3-list-the-storage-classes-for-a-specific-cluster]]
 === 3. Liste as classes de armazenamento de um cluster específico
 
 Execute a seguinte chamada de API REST para listar as classes de armazenamento de um cluster e nuvem específicos.

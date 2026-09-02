@@ -7,6 +7,7 @@ summary: Modificar um bucket
 ---
 = Modificar um bucket
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
@@ -15,6 +16,7 @@ Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, 
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID da coleção de buckets a ser listada
 |===
 
 
+[[request-body]]
 == Corpo da solicitação
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
@@ -147,6 +150,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -155,6 +159,7 @@ Status: 204, Indicates if the bucket resource was updated.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -200,6 +205,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -250,6 +256,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -300,6 +307,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -345,6 +353,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -390,14 +399,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -421,6 +433,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falso  a| 
 
 |===
+[[s3]]
 [role="api-collapsible-fifth-title"]
 s3
 
@@ -448,6 +461,7 @@ String JSON contendo o nome do bucket S3. Os valores definidos são:
 
 
 |===
+[[gcp]]
 [role="api-collapsible-fifth-title"]
 gcp
 
@@ -466,6 +480,7 @@ String JSON contendo o nome do bucket do Google Cloud que está sendo usado como
 
 
 |===
+[[azure]]
 [role="api-collapsible-fifth-title"]
 azure
 
@@ -493,6 +508,7 @@ String JSON contendo o nome do blob do Azure subjacente. Os valores definidos s�
 
 
 |===
+[[bucketParameters]]
 [role="api-collapsible-fifth-title"]
 bucketParameters
 
@@ -517,6 +533,7 @@ Objeto JSON que fornece parâmetros do protocolo Google Cloud.
 Objeto JSON que fornece parâmetros do protocolo Azure.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -532,6 +549,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadados_update
 
@@ -564,6 +582,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -581,6 +600,7 @@ Nome do parâmetro de consulta inválido
 Motivo pelo qual o parâmetro de consulta é inválido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

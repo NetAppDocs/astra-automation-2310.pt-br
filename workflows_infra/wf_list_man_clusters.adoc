@@ -18,6 +18,7 @@ summary: É possível listar os clusters de Kubernetes gerenciados atualmente pe
 
 
 
+[[1-list-the-managed-clusters]]
 === 1. Listar os clusters gerenciados
 
 Execute a seguinte chamada de API REST.

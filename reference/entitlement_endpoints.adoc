@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade de autorização da Astra API (ACC)'
 ---
 = Pontos de extremidade de autorização da Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de Entitlement representa quais recursos ou capacidades estão habilitados pelas licenças e assinaturas ativas para uma conta.

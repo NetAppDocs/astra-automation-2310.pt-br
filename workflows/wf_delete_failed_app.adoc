@@ -18,36 +18,42 @@ Talvez você não consiga remover um aplicativo gerenciado se ele tiver um backu
 
 
 
+[[1-select-the-app-to-delete]]
 === 1. Selecione a aplicação a eliminar
 
 Execute o fluxo de trabalho link:wf_list_man_apps.html["Liste as aplicações"] e selecione a aplicação que pretende remover.
 
 
 
+[[2-list-the-existing-backups-for-the-app]]
 === 2. Liste os backups existentes para o aplicativo
 
 Execute o fluxo de link:wf_list_backups.html["Liste os backups"]trabalho .
 
 
 
+[[3-delete-all-the-backups]]
 === 3. Exclua todos os backups
 
 Exclua todos os backups de aplicativos executando o fluxo de trabalho link:wf_delete_backup.html["Eliminar uma cópia de segurança"] para cada backup na lista.
 
 
 
+[[4-list-the-existing-snapshots-for-the-app]]
 === 4. Liste os instantâneos existentes para o aplicativo
 
 Execute o fluxo de link:wf_list_snapshots.html["Liste os instantâneos"]trabalho .
 
 
 
+[[5-delete-all-the-snapshots]]
 === 5. Eliminar todos os instantâneos
 
 Execute o fluxo de trabalho link:wf_delete_snapshot.html["Eliminar um instantâneo"]de cada instantâneo na lista.
 
 
 
+[[6-remove-the-application]]
 === 6. Remova a aplicação
 
 Execute o fluxo de trabalho link:wf_unmanage_app.html["Desgerenciar um aplicativo"] para remover a aplicação.

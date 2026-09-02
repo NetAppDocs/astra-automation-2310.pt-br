@@ -7,6 +7,7 @@ summary: 'Pontos de extremidade de gancho de execução da Astra API (ACC)'
 ---
 = Pontos de extremidade de gancho de execução da Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A Execution Hook API permite o gerenciamento simplificado de ganchos de execução. Os ganchos de execução contêm configurações adicionais e referências a um recurso de origem do gancho.

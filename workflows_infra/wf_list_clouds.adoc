@@ -18,6 +18,7 @@ Você pode listar as nuvens definidas e disponíveis de uma conta específica do
 
 
 
+[[1-list-the-clouds]]
 === 1. Liste as nuvens
 
 Execute a seguinte chamada de API REST para listar as nuvens.

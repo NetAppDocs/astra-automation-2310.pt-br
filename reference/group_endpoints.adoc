@@ -7,6 +7,7 @@ summary: 'Endpoints do grupo Astra API (ACC)'
 ---
 = Endpoints do grupo Astra API (ACC)
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A API de grupo fornece acesso aos recursos de grupo do Astra.

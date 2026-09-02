@@ -7,6 +7,7 @@ summary: Criar um novo usuário
 ---
 = Criar um novo usuário
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
@@ -15,6 +16,7 @@ Indica os valores desejados para o recurso da API do usuário a ser criado.
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID do recurso de conta que o contém
 |===
 
 
+[[request-body]]
 == Corpo da solicitação
 
 Indica os valores desejados para o recurso da API do usuário a ser criado.
@@ -150,6 +153,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -329,6 +333,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -374,6 +379,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -424,6 +430,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -474,6 +481,7 @@ Lista de campos inválidos no corpo da requisição
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -519,6 +527,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -564,11 +573,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -632,6 +643,7 @@ String JSON contendo informações opcionais de endereço de rua, caixa postal e
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -647,6 +659,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadados_update
 
@@ -679,6 +692,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -696,6 +710,7 @@ Nome do parâmetro de consulta inválido
 Motivo pelo qual o parâmetro de consulta é inválido
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

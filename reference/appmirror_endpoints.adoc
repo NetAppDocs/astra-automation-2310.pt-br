@@ -7,6 +7,7 @@ summary: 'Endpoints da API Astra (ACC) AppMirror'
 ---
 = Endpoints da API Astra (ACC) AppMirror
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 A AppMirror API permite o gerenciamento de AppMirror relationships.

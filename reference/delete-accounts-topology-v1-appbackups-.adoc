@@ -7,6 +7,7 @@ summary: Excluir backup de aplicativo
 ---
 = Excluir backup de aplicativo
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
@@ -20,6 +21,7 @@ Remove o recurso da API de Backup de Aplicativos especificado. Backups em andame
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID da appBackup coleção a ser listada
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -49,6 +52,7 @@ Status: 204, Indicates if the appBackup resource was deleted.
 ----
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -94,6 +98,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -144,6 +149,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -189,6 +195,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -234,6 +241,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -279,6 +287,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -324,11 +333,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

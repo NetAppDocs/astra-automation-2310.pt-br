@@ -18,6 +18,7 @@ Você deve estar familiarizado com a organização e o formato dos workflows do 
 
 
 
+[[introduction]]
 == Introdução
 
 Um _workflow_ é uma sequência de uma ou mais etapas necessárias para realizar uma tarefa ou objetivo administrativo específico. Cada etapa em um fluxo de trabalho do Astra Control é uma das seguintes:
@@ -31,6 +32,7 @@ Os fluxos de trabalho incluem as etapas principais e os parâmetros necessários
 
 
 
+[[common-input-parameters]]
 == Parâmetros de entrada comuns
 
 Os parâmetros de entrada descritos abaixo são comuns a todas as amostras curl usadas para ilustrar uma chamada de API REST.
@@ -40,6 +42,7 @@ NOTE: Como esses parâmetros de entrada são universalmente necessários, eles n
 
 
 
+[[path-parameters]]
 === Parâmetros do caminho
 
 O caminho do endpoint usado com cada chamada de API REST inclui os seguintes parâmetros. Consulte também link:../rest-core/url_format.html["Formato de URL"]para obter mais informações.
@@ -49,6 +52,7 @@ ID da conta:: Esse é o valor UUIDv4 que identifica a conta Astra onde a operaç
 
 
 
+[[request-headers]]
 === Cabeçalhos de solicitação
 
 Existem vários cabeçalhos de solicitação que você pode precisar incluir dependendo da chamada da API REST.
@@ -60,6 +64,7 @@ Aceitar:: Você pode declarar o tipo de Mídia específico do conteúdo esperado
 
 
 
+[[presentation-of-tokens-and-identifiers]]
 == Apresentação de tokens e identificadores
 
 O token API e outros valores de ID usados com os exemplos curl são opacos sem significado discernível. E assim, para melhorar a legibilidade das amostras, os valores reais de token e ID não são usados. Em vez disso, palavras-chave reservadas menores são usadas que tem vários benefícios:
@@ -86,6 +91,7 @@ Aqui estão algumas das palavras-chave reservadas comuns usadas nos exemplos cur
 |===
 
 
+[[workflow-categories]]
 == Categorias de fluxo de trabalho
 
 Há duas grandes categorias de workflows do Astra disponíveis com base no seu modelo de implantação. Se você estiver usando o Astra Control Center, comece com os workflows de infraestrutura e prossiga para os workflows de gerenciamento. Ao usar o Astra Control Service, você costuma ir diretamente aos workflows de gerenciamento.
@@ -95,12 +101,14 @@ NOTE: As amostras curl nos fluxos de trabalho usam o URL do Astra Control Servic
 
 
 
+[[infrastructure-workflows]]
 === Workflows de infraestrutura
 
 Esses workflows lidam com a infraestrutura Astra, incluindo credenciais, buckets e back-ends de storage. Elas são necessárias com o Astra Control Center, mas na maioria dos casos também podem ser usadas com o Astra Control Service. Os fluxos de trabalho concentram-se nas tarefas necessárias para estabelecer e manter um cluster gerenciado do Astra.
 
 
 
+[[management-workflows]]
 === Fluxos de trabalho de gerenciamento
 
 Você pode usar esses fluxos de trabalho depois de ter um cluster gerenciado. Os workflows se concentram em operações de suporte e proteção de aplicativos, como backup, restauração e clonagem de um aplicativo.

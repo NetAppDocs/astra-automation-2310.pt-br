@@ -7,6 +7,7 @@ summary: Listar todas as configurações
 ---
 = Listar todas as configurações
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings`#
@@ -15,6 +16,7 @@ Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se c
 
 
 
+[[parameters]]
 == Parâmetros
 
 [cols="5*"]
@@ -92,6 +94,7 @@ Exemplos OpenAPI: "1"
 |===
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -181,6 +184,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -226,6 +230,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -276,6 +281,7 @@ Lista de parâmetros de consulta inválidos
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -321,6 +327,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Resposta
 
 [source]
@@ -366,6 +373,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == Erro
 
 [source]
@@ -411,24 +419,29 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definições
 
 .Ver definições
 [%collapsible]
 ====
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 tipo_json
 
 Objeto JSON contendo chaves e valores que compõem a configuração atual para esta opção. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. Os valores padrão são fornecidos pelo configmap. Depois que os valores padrão forem alterados pelo usuário, eles não serão sobrescritos.
 
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 tipo_json
 
 Objeto JSON contendo chaves e valores que compõem a configuração solicitada para esta definição. O conteúdo deste objeto deve estar em conformidade com o esquema JSON contido no campo configSchema. O objeto não existe até ser especificado. Quando especificado, isso faz com que o serviço de funcionalidade notifique o serviço correspondente para solicitar que a configuração desejada possa ser aplicada. O serviço correspondente pode então realizar a validação e aplicar a configuração desejada à configuração atual.
 
+[[properties]]
 [role="api-collapsible-fifth-title"]
 propriedades
 
+[[type_json_schema]]
 [role="api-collapsible-fifth-title"]
 tipo_json_schema
 
@@ -458,6 +471,7 @@ Objeto JSON contendo o esquema JSON para a propriedade config neste recurso. Dev
 | obrigatório | array[string] | Verdadeiro  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 tipo_astra_label
 
@@ -473,6 +487,7 @@ tipo_astra_label
 | valor | string | Verdadeiro  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadados_update
 
@@ -505,6 +520,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 | modifiedBy | string | Falso  a| 
 
 |===
+[[setting_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 configuração_1.1_obter_corpo_da_resposta
 
@@ -589,6 +605,7 @@ Metadados especificados pelo cliente e pelo serviço associados ao recurso. Os v
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -624,6 +641,7 @@ type_astra_metadata_list
 | modifiedBy | string | Falso  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,6 +18,7 @@ Você pode remover um aplicativo gerenciado quando não for mais necessário. A 
 
 
 
+[[before-you-begin]]
 === Antes de começar
 
 Você deve ter o ID do aplicativo que deseja desgerenciar. Se necessário, você pode usar o fluxo de trabalho link:wf_list_man_apps.html["Liste as aplicações"] para localizar o aplicativo.
@@ -26,6 +27,7 @@ Os backups e snapshots do aplicativo não são removidos automaticamente quando 
 
 
 
+[[1-unmanaged-the-app]]
 === 1. Não gerido a aplicação
 
 Execute a seguinte chamada de API REST para remover o aplicativo.
