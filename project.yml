@@ -37,7 +37,7 @@ sidebar:
   - title: Referência da API
     entries:
     - title: Visão geral
-      url: "/reference/astra_api_(acc)_overview.html"
+      url: "/reference/astra_api_acc_overview.html"
     - title: ASUP
       entries:
       - title: Visão geral

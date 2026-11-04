@@ -117,7 +117,7 @@ Array JSON de strings JSON que especificam o escopo da atribuição de função.
 
 * 
 +
-= Permitir acesso a todos os namespaces rotulados como "dev" em qualquer cluster em qualquer nuvem, e a tudo que estiver abaixo deles: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= Permitir acesso a todos os namespaces rotulados como "dev" em qualquer cluster em qualquer nuvem e a tudo o que estiver abaixo deles: "roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*" ]
 
 * 
 +
@@ -260,7 +260,7 @@ Array JSON de strings JSON que especificam o escopo da atribuição de função.
 
 * 
 +
-= Permitir acesso a todos os namespaces rotulados como "dev" em qualquer cluster em qualquer nuvem, e a tudo que estiver abaixo deles: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= Permitir acesso a todos os namespaces rotulados como "dev" em qualquer cluster em qualquer nuvem e a tudo o que estiver abaixo deles: "roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*" ]
 
 * 
 +

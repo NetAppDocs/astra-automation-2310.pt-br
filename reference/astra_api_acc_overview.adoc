@@ -2,7 +2,7 @@
 sidebar: sidebar 
 api: true 
 explorer: false 
-permalink: 'reference/astra_api_(acc)_overview.html' 
+permalink: reference/astra_api_acc_overview.html 
 summary: 'Visão geral da API Astra (ACC)' 
 ---
 = Visão geral da API Astra (ACC)
