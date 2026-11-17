@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cluster_endpoints.html 
+keywords: unmanaged clusters,kubernetes clusters,cluster discovery,cluster management,cluster resources 
 summary: 'Pontos de extremidade do cluster da API Astra (ACC)' 
 ---
 = Pontos de extremidade do cluster da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Trabalhe com clusters Kubernetes que o Astra Control ainda não gerencia.
 
 A Cluster API representa clusters Kubernetes não gerenciados.

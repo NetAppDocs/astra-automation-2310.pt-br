@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-subscriptions-.html 
+keywords: subscription management,account update,resource replacement,status inactive,zuora integration 
 summary: Modificar uma assinatura 
 ---
 = Modificar uma assinatura
@@ -10,7 +11,20 @@ summary: Modificar uma assinatura
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica uma assinatura substituindo o recurso armazenado pelo corpo da solicitação JSON fornecido, mantendo os valores-chave que não podem ser alterados pelos usuários. Use este endpoint se precisar atualizar os detalhes da assinatura, garantindo que determinados valores permaneçam inalterados.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

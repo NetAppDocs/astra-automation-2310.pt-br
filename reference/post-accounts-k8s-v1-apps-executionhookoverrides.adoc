@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,hook override,app resource,account resource,k8s app 
 summary: Crie um novo recurso de substituição de gancho de execução para um aplicativo 
 ---
 = Crie um novo recurso de substituição de gancho de execução para um aplicativo
@@ -10,7 +11,20 @@ summary: Crie um novo recurso de substituição de gancho de execução para um 
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um recurso de substituição de gancho de execução para um aplicativo, especificando os valores desejados para personalização. Use isso para adaptar os ganchos de execução de acordo com requisitos de aplicativos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de substituição do gancho de execução a ser criado.
 

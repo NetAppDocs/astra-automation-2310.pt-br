@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces.html 
+keywords: cluster topology,namespaces list,resource collection,account cluster,namespaces fields 
 summary: Liste os namespaces de um cluster 
 ---
 = Liste os namespaces de um cluster
@@ -10,7 +11,20 @@ summary: Liste os namespaces de um cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os namespaces de um cluster, fornecendo uma lista de todos os recursos correspondentes na coleção. Use isso para visualizar campos específicos de cada recurso, conforme necessário.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

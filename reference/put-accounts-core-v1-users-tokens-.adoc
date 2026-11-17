@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-tokens-.html 
+keywords: replace resource,modify token,user resource,account resource,token collection 
 summary: Modificar um token 
 ---
 = Modificar um token
@@ -10,7 +11,20 @@ summary: Modificar um token
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um token substituindo o recurso armazenado pelo corpo da solicitação JSON fornecido, mantendo os valores-chave que não podem ser modificados pelo usuário.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

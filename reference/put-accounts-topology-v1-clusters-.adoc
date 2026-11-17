@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-clusters-.html 
+keywords: replace resource,cluster update,managed cluster,cluster collection,account resource 
 summary: Modificar um cluster 
 ---
 = Modificar um cluster
@@ -10,7 +11,20 @@ summary: Modificar um cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um cluster substituindo todo o recurso armazenado pelo corpo da solicitação JSON fornecido. Se o cluster estiver em um estado gerenciado, qualquer atualização de credentialID acabará acionando outra tentativa de coletar o cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

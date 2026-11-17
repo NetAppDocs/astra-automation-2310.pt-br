@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-certificates-.html 
+keywords: certificate resource,certificate collection,stored certificate,account certificate,certificate id 
 summary: Obter um certificado 
 ---
 = Obter um certificado
@@ -10,7 +11,20 @@ summary: Obter um certificado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um certificado para fornecer na resposta os detalhes armazenados do recurso da API de certificados.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Certificado armazenado no corpo da resposta JSON.
 

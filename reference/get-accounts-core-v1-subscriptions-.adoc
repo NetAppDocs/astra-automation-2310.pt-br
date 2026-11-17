@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions-.html 
+keywords: subscription resource,subscription id,account resource,account id,subscription collection 
 summary: Recuperar uma assinatura 
 ---
 = Recuperar uma assinatura
@@ -10,7 +11,20 @@ summary: Recuperar uma assinatura
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma assinatura, retornando o recurso armazenado da API de assinatura para fins de monitoramento ou gerenciamento.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Assinatura armazenado no corpo da resposta JSON.
 

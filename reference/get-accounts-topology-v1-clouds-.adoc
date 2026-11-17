@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-.html 
+keywords: cloud resource,cloud topology,stored cloud,cloud collection,account resource 
 summary: Recuperar uma nuvem 
 ---
 = Recuperar uma nuvem
@@ -10,7 +11,20 @@ summary: Recuperar uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um recurso na nuvem, fornecendo os detalhes de configuração armazenados para tarefas de gerenciamento de nuvem.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da Cloud API armazenado no corpo da resposta JSON.
 

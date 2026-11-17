@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-rolebindings.html 
+keywords: role binding,create role,account role,core role binding,role management 
 summary: Criar uma nova vinculação de função 
 ---
 = Criar uma nova vinculação de função
@@ -10,7 +11,20 @@ summary: Criar uma nova vinculação de função
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma associação de função na Astra API, especificando os valores desejados para o recurso de associação de função. Use isso para definir permissões e controle de acesso para usuários no seu ambiente.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de vinculação de função a ser criado.
 

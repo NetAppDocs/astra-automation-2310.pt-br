@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-packages.html 
+keywords: package creation,core packages,account package,create package,package resource 
 summary: Criar um novo pacote 
 ---
 = Criar um novo pacote
@@ -10,7 +11,20 @@ summary: Criar um novo pacote
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um pacote na Astra API, especificando os valores desejados para o recurso da Package API. Use isso para definir os atributos e as configurações do pacote.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso Package API a ser criado.
 

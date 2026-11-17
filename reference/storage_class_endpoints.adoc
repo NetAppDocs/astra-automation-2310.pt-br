@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/storage_class_endpoints.html 
+keywords: storage classes,kubernetes storage,cluster storage classes,storage class details,persistent storage 
 summary: 'Endpoints da classe de armazenamento da Astra API (ACC)' 
 ---
 = Endpoints da classe de armazenamento da Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Veja as classes de armazenamento disponíveis em um cluster.
 
 A API de Classes de Armazenamento descreve as classes de armazenamento conhecidas por um determinado cluster.

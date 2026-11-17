@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apiresources.html 
+keywords: topology resources,managed clusters,resource collection,include fields,limit resources 
 summary: Liste os recursos da API do K8s para um cluster gerenciado 
 ---
 = Liste os recursos da API do K8s para um cluster gerenciado
@@ -10,7 +11,20 @@ summary: Liste os recursos da API do K8s para um cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de recursos da API do Kubernetes para um cluster gerenciado. Use isso para visualizar os recursos disponíveis no cluster especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apiResources`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

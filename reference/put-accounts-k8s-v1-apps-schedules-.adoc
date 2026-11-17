@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-schedules-.html 
+keywords: replace resource,schedule update,account management,app scheduling,modify schedule 
 summary: Modificar um cronograma 
 ---
 = Modificar um cronograma
@@ -10,7 +11,20 @@ summary: Modificar um cronograma
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um agendamento substituindo o recurso armazenado pelo corpo da solicitação JSON fornecido, preservando os valores-chave que não podem ser modificados pelo usuário.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

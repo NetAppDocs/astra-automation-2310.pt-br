@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cloud_endpoints.html 
+keywords: cloud resources,cloud connections,cloud management,managed clusters,cloud configuration 
 summary: 'Pontos de extremidade na nuvem da API Astra (ACC)' 
 ---
 = Pontos de extremidade na nuvem da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie recursos na nuvem para que você possa se conectar a nuvens específicas e gerenciar seus clusters e aplicativos nelas.
 
 A Cloud API fornece acesso a recursos na nuvem, permitindo que os clientes se conectem a nuvens específicas para gerenciar clusters e aplicativos.

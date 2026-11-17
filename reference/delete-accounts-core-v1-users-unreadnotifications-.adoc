@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-unreadnotifications-.html 
+keywords: remove unread notification,unread notification delete,delete unread notification,user notification remove,account notification delete 
 summary: Excluir notificação não lida 
 ---
 = Excluir notificação não lida
@@ -10,7 +11,20 @@ summary: Excluir notificação não lida
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui uma notificação não lida, removendo o recurso de notificação especificado da sua lista de notificações.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso de API de Notificação Não Lida especificado.
 

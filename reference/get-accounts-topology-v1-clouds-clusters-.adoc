@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-.html 
+keywords: cluster resource,cloud cluster,account resource,topology cloud,cluster collection 
 summary: Recuperar um cluster para uma nuvem 
 ---
 = Recuperar um cluster para uma nuvem
@@ -10,7 +11,20 @@ summary: Recuperar um cluster para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um cluster de uma nuvem, fornecendo acesso aos dados armazenados do recurso Cluster API.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Cluster armazenado no corpo da resposta JSON.
 

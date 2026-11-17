@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-appmirrors.html 
+keywords: accounts collection,k8s app mirrors,resource fields,matching resources,collection limit 
 summary: Liste todos os recursos AppMirror 
 ---
 = Liste todos os recursos AppMirror
@@ -10,7 +11,20 @@ summary: Liste todos os recursos AppMirror
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de recursos do AppMirror, fornecendo as configurações de recursos disponíveis para seus aplicativos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts.html 
+keywords: create account,account resource,new account,account creation,account setup 
 summary: Criar uma nova conta 
 ---
 = Criar uma nova conta
@@ -10,7 +11,20 @@ summary: Criar uma nova conta
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma nova conta, especificando os valores desejados para o recurso Account API. Use isto para definir e configurar os detalhes da conta para acessar os serviços.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso Account API a ser criado.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/appmirror_endpoints.html 
+keywords: appmirror,application mirroring,mirror relationships,relationship management,replication 
 summary: 'Endpoints da API Astra (ACC) AppMirror' 
 ---
 = Endpoints da API Astra (ACC) AppMirror
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie os relacionamentos do AppMirror para seus aplicativos.
 
 A AppMirror API permite o gerenciamento de AppMirror relationships.

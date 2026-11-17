@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-unreadnotifications-.html 
+keywords: remove notification,unread notification,delete notification,user notification,notification management,notification removal 
 summary: Excluir uma notificação não lida para um usuário em um grupo 
 ---
 = Excluir uma notificação não lida para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Excluir uma notificação não lida para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui uma notificação não lida para um usuário em um grupo. Use isso para gerenciar e manter o status das notificações em interações de grupo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso de API de Notificação Não Lida especificado.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-volumes-.html 
+keywords: volume resource,volume collection,managed cluster,account id,stored volume,volume json 
 summary: Recuperar um volume para um cluster gerenciado 
 ---
 = Recuperar um volume para um cluster gerenciado
@@ -10,7 +11,20 @@ summary: Recuperar um volume para um cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um volume de um cluster gerenciado, fornecendo acesso às informações armazenadas no volume para posterior gerenciamento ou análise.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Volume armazenado no corpo da resposta JSON.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users.html 
+keywords: users collection,account users,resource fields,collection list,resource sort,collection filter 
 summary: Listar todos os usuários 
 ---
 = Listar todos os usuários
@@ -10,7 +11,20 @@ summary: Listar todos os usuários
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de todos os usuários do sistema, fornecendo acesso a informações e configurações de cada usuário. Use isso para revisar ou gerenciar contas de usuário de forma eficiente.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

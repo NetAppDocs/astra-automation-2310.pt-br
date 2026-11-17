@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-clouds.html 
+keywords: netapp ontap,cloud resource,account resource,cloud topology,create cloud 
 summary: Criar uma nova nuvem 
 ---
 = Criar uma nova nuvem
@@ -10,7 +11,20 @@ summary: Criar uma nova nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um novo recurso de nuvem na Astra API. Use isso para especificar os valores desejados para sua configuração de nuvem.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da Cloud API a ser criado.
 

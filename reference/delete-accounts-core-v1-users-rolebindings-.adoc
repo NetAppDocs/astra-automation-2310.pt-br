@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-rolebindings-.html 
+keywords: remove role binding,delete role binding,user role binding,role binding removal,delete user role,remove user role 
 summary: Excluir uma associação de função para um usuário 
 ---
 = Excluir uma associação de função para um usuário
@@ -10,7 +11,20 @@ summary: Excluir uma associação de função para um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um vínculo de função de um usuário, removendo o recurso de API Role Binding especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de Role Binding especificado.
 

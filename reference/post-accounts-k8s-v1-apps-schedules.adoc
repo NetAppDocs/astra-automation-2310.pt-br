@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-schedules.html 
+keywords: account schedule,kubernetes app,app schedule,create schedule,account resource 
 summary: Criar um novo cronograma para um app 
 ---
 = Criar um novo cronograma para um app
@@ -10,7 +11,20 @@ summary: Criar um novo cronograma para um app
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um novo agendamento para um aplicativo, especificando os parâmetros desejados para agendar tarefas ou eventos. Use isso para automatizar as operações do aplicativo de acordo com o agendamento definido.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API Schedule a ser criado.
 

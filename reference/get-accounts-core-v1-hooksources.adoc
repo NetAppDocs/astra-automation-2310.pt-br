@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-hooksources.html 
+keywords: hook sources,resource collection,field filter,field limit,account resource 
 summary: Liste todas as fontes de gancho 
 ---
 = Liste todas as fontes de gancho
@@ -10,7 +11,20 @@ summary: Liste todas as fontes de gancho
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera todas as fontes de hook na coleção. Use isso para visualizar os campos disponíveis para cada recurso, conforme especificado na sua solicitação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

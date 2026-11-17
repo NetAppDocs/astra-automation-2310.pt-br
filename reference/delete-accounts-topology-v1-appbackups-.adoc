@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-appbackups-.html 
+keywords: application backup,delete backup,backup removal,backup data delete,delete app backup 
 summary: Excluir backup de aplicativo 
 ---
 = Excluir backup de aplicativo
@@ -10,7 +11,20 @@ summary: Excluir backup de aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um backup de aplicativo, removendo o recurso de backup especificado e seus dados associados. Use isto para gerenciar o espaço de storage ou remover backups desatualizados dos recursos do seu aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de Backup de Aplicativos especificado. Backups em andamento serão cancelados e, em seguida, excluídos.
 

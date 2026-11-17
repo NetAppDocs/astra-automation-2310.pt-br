@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups.html 
+keywords: account backups,kubernetes apps,resource collection,app id,account id 
 summary: Liste os backups do aplicativo para um app 
 ---
 = Liste os backups do aplicativo para um app
@@ -10,7 +11,20 @@ summary: Liste os backups do aplicativo para um app
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera backups de aplicativo para um aplicativo. Use esta opção para inspecionar as configurações e os status de backup associados ao aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

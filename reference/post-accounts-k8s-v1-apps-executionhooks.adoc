@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,create execution hook,account resource,app resource 
 summary: Crie um novo gancho de execução para um aplicativo 
 ---
 = Crie um novo gancho de execução para um aplicativo
@@ -10,7 +11,20 @@ summary: Crie um novo gancho de execução para um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um novo hook de execução para um aplicativo a fim de especificar os valores desejados para processos automatizados ou integrações.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API Execution Hook a ser criado.
 

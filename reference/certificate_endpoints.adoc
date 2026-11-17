@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/certificate_endpoints.html 
+keywords: trusted certificates,certificate management,outgoing connections,admin-trusted certificates,secure connections 
 summary: 'Pontos de extremidade de certificado da API Astra (ACC)' 
 ---
 = Pontos de extremidade de certificado da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie os certificados confiáveis do administrador que o Astra Control usa para estabelecer conexões de saída.
 
 A API do aplicativo de certificados representa certificados confiáveis pelo administrador que são usados para estabelecer conexões de saída.

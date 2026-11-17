@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role binding,group roles,user roles,account role binding,user role binding 
 summary: Criar uma nova associação de função para um usuário em um grupo 
 ---
 = Criar uma nova associação de função para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Criar uma nova associação de função para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma nova vinculação de função para um usuário em um grupo, estabelecendo permissões para que o usuário execute ações no contexto do grupo especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de vinculação de função a ser criado.
 

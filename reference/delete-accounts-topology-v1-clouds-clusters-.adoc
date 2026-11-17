@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-clouds-clusters-.html 
+keywords: cluster removal,delete cluster,remove cluster,cloud cleanup,internal data cleanup 
 summary: Excluir um cluster para uma nuvem 
 ---
 = Excluir um cluster para uma nuvem
@@ -10,7 +11,20 @@ summary: Excluir um cluster para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um cluster da nuvem. Use esta operação para remover o recurso Cluster API especificado e limpar as estruturas de dados internas.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de cluster especificado.
 

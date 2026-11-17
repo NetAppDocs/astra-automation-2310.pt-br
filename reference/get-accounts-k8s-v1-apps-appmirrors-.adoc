@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appmirrors-.html 
+keywords: account resource,app resource,appMirror collection,appMirror resource,k8s apps 
 summary: Recuperar um recurso AppMirror para um aplicativo 
 ---
 = Recuperar um recurso AppMirror para um aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um recurso AppMirror para um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um recurso AppMirror para um aplicativo, fornecendo acesso aos detalhes de configuração armazenados para o espelhamento de aplicativos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API AppMirror armazenado no corpo da resposta JSON.
 

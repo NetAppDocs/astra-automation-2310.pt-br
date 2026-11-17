@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-.html 
+keywords: managed cluster,cluster resource,account resource,cluster topology,cluster collection 
 summary: Recuperar um cluster gerenciado 
 ---
 = Recuperar um cluster gerenciado
@@ -10,7 +11,20 @@ summary: Recuperar um cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um cluster gerenciado, fornecendo os detalhes armazenados no recurso da API Managed Cluster. Use essas informações para entender a configuração e o status atuais do seu cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Managed Cluster armazenado no corpo da resposta JSON.
 

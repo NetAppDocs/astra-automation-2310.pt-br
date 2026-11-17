@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appsnaps.html 
+keywords: application snapshot,create snapshot,k8s apps,account resource,app resource 
 summary: Criar um novo Snapshot de aplicativo para um app 
 ---
 = Criar um novo Snapshot de aplicativo para um app
@@ -10,7 +11,20 @@ summary: Criar um novo Snapshot de aplicativo para um app
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um novo instantâneo de aplicativo para um aplicativo, capturando o estado atual do aplicativo para fins de backup ou recuperação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de Snapshot de Aplicativo a ser criado.
 

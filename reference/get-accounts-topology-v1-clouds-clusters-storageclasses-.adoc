@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-storageclasses-.html 
+keywords: account storage class,cloud storage class,cluster storage class,storage class topology,storage class resource,storage class list 
 summary: Recuperar uma classe de armazenamento para uma nuvem 
 ---
 = Recuperar uma classe de armazenamento para uma nuvem
@@ -10,7 +11,20 @@ summary: Recuperar uma classe de armazenamento para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma classe de armazenamento para uma nuvem, fornecendo a configuração de classe disponível para recursos de storage.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Storage Class armazenado no corpo da resposta JSON.
 

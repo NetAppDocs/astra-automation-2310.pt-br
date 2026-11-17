@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-volumes.html 
+keywords: accounts volumes,k8s apps,resource collection,fields listing,account resource 
 summary: Liste os volumes de um aplicativo 
 ---
 = Liste os volumes de um aplicativo
@@ -10,7 +11,20 @@ summary: Liste os volumes de um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de volumes para um aplicativo específico. Use isso para visualizar as configurações detalhadas e as propriedades de cada volume associado ao aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/volumes`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

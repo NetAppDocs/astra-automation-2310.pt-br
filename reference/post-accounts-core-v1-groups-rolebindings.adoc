@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-groups-rolebindings.html 
+keywords: role binding,create role,group role,account role,role management 
 summary: Criar uma nova vinculação de função para um grupo 
 ---
 = Criar uma nova vinculação de função para um grupo
@@ -10,7 +11,20 @@ summary: Criar uma nova vinculação de função para um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma nova associação de função para um grupo, atribuindo permissões específicas ao grupo no ambiente do Astra. Use este endpoint para gerenciar o controle de acesso de forma eficaz para operações baseadas em grupo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de vinculação de função a ser criado.
 

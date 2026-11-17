@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-packages-.html 
+keywords: stored package,package resource,package collection,account resource,account id 
 summary: Recuperar um pacote 
 ---
 = Recuperar um pacote
@@ -10,7 +11,20 @@ summary: Recuperar um pacote
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um pacote armazenado, fornecendo acesso aos detalhes do recurso de API do pacote.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages/{package_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Package armazenado no corpo da resposta JSON.
 

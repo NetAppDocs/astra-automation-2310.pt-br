@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-storageclasses.html 
+keywords: topology cloud,storage classes,cluster storage,cloud clusters,resource fields 
 summary: Liste as classes de armazenamento para uma nuvem 
 ---
 = Liste as classes de armazenamento para uma nuvem
@@ -10,7 +11,20 @@ summary: Liste as classes de armazenamento para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de classes de armazenamento para uma nuvem, fornecendo detalhes sobre as configurações disponíveis para recursos de storage de nuvem.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/storageClasses`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

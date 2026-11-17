@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-unreadnotifications-.html 
+keywords: unread notifications,user notifications,notification list,account notifications,user unread,notification resource 
 summary: Recuperar uma notificação não lida 
 ---
 = Recuperar uma notificação não lida
@@ -10,7 +11,20 @@ summary: Recuperar uma notificação não lida
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma notificação não lida, fornecendo os detalhes da notificação armazenada para revisão ou ação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Notificação Não Lida armazenado no corpo da resposta JSON.
 

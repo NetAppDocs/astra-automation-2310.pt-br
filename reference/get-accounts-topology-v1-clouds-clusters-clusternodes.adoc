@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-clusternodes.html 
+keywords: cloud topology,cluster nodes,resource collection,matching resources,field request 
 summary: Liste os nós do cluster para uma nuvem 
 ---
 = Liste os nós do cluster para uma nuvem
@@ -10,7 +11,20 @@ summary: Liste os nós do cluster para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os nós de cluster para uma nuvem, fornecendo detalhes sobre os nós disponíveis no ambiente de nuvem especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

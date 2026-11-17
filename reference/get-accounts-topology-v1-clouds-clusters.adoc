@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters.html 
+keywords: account topology,cloud clusters,resource collection,field filtering,limit resources 
 summary: Liste os clusters para uma nuvem 
 ---
 = Liste os clusters para uma nuvem
@@ -10,7 +11,20 @@ summary: Liste os clusters para uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de clusters para uma nuvem. Use esta opção para visualizar os clusters disponíveis no seu ambiente de nuvem especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-schedules-.html 
+keywords: remove schedule,k8s schedule,app schedule delete,delete schedule resource,account schedule removal 
 summary: Excluir um agendamento 
 ---
 = Excluir um agendamento
@@ -10,7 +11,20 @@ summary: Excluir um agendamento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um agendamento, removendo o recurso da API de Agendamento especificado do Astra.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso Schedule API especificado.
 

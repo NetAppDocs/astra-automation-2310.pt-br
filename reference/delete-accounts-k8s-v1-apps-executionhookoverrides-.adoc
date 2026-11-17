@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook override,override removal,delete execution hook,execution hook enable,hook type netapp 
 summary: Excluir um recurso de substituição de gancho de execução 
 ---
 = Excluir um recurso de substituição de gancho de execução
@@ -10,7 +11,20 @@ summary: Excluir um recurso de substituição de gancho de execução
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um recurso de substituição de gancho de execução. Use isso para remover configurações personalizadas de ganchos de execução no seu aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso de API de substituição de Execution Hook especificado.
 

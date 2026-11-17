@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps-.html 
+keywords: application snapshot,k8s apps,stored snapshot,account resource,appSnap collection 
 summary: Recuperar um Snapshot do aplicativo 
 ---
 = Recuperar um Snapshot do aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um Snapshot do aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um instantâneo da aplicação, fornecendo os dados do instantâneo armazenado para revisão ou análise.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Application Snapshot armazenado no corpo da resposta JSON.
 

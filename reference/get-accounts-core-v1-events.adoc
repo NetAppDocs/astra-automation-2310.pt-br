@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-events.html 
+keywords: events collection,resource fields,account events,resource limit,resource filter,sort order 
 summary: Liste todos os eventos 
 ---
 = Liste todos os eventos
@@ -10,7 +11,20 @@ summary: Liste todos os eventos
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de eventos. Use esta opção para visualizar todos os recursos correspondentes na coleção com base em critérios específicos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

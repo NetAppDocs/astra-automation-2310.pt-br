@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-asups-.html 
+keywords: autosupport download,asup resource,autosupport bundle,creation state,asup collection 
 summary: Recuperar um recurso ASUP 
 ---
 = Recuperar um recurso ASUP
@@ -10,7 +11,20 @@ summary: Recuperar um recurso ASUP
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um recurso ASUP, permitindo o acesso aos dados armazenados do AutoSupport para fins de monitoramento e diagnóstico.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups/{asup_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API ASUP armazenado no corpo da resposta JSON. Se o pacote AutoSupport "creationState" estiver "completo" ou "parcial", o pacote AutoSupport pode ser baixado especificando um cabeçalho Accept contendo "_/_" ou "application/gzip".
 

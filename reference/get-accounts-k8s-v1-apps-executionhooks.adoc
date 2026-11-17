@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,collection resources,app resource,account resource 
 summary: Liste os ganchos de execução de um aplicativo 
 ---
 = Liste os ganchos de execução de um aplicativo
@@ -10,7 +11,20 @@ summary: Liste os ganchos de execução de um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os ganchos de execução de um aplicativo, fornecendo uma matriz JSON de todos os recursos correspondentes na coleção. Use isso para visualizar campos específicos de cada recurso correspondente, conforme necessário.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

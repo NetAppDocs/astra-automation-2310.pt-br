@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/account_endpoints.html 
+keywords: astra accounts,tenant accounts,multitenant,account management,account creation 
 summary: 'Pontos de extremidade da conta da API Astra (ACC)' 
 ---
 = Pontos de extremidade da conta da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie as contas que isolam os tenants em um ambiente multitenant do Astra Control.
 
 A Account API representa locatários isolados em um sistema multitenant.

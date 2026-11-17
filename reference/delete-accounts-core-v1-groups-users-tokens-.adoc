@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-tokens-.html 
+keywords: remove token,delete token,credential removal,token deletion,account token removal 
 summary: Excluir um token para um usuário em um grupo 
 ---
 = Excluir um token para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Excluir um token para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um token para um usuário em um grupo. Esta ação remove o recurso de API de token especificado e sua credencial do serviço.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso Token API especificado.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions.html 
+keywords: subscriptions,matching resources,collection fields,account id,resource listing,sort order 
 summary: Liste todas as assinaturas 
 ---
 = Liste todas as assinaturas
@@ -10,7 +11,20 @@ summary: Liste todas as assinaturas
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de assinaturas, fornecendo detalhes para cada assinatura na coleção. Use isso para visualizar e gerenciar suas assinaturas com eficiência.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-users-groups-.html 
+keywords: remove group,group resource,role bindings,user group,user resource,account resource 
 summary: Excluir um grupo para um usuário 
 ---
 = Excluir um grupo para um usuário
@@ -10,7 +11,20 @@ summary: Excluir um grupo para um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um grupo para um usuário, removendo o recurso da Group API especificado. Os recursos associados, como vinculações de função referentes ao grupo, também são excluídos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de grupo especificado.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces-.html 
+keywords: cluster namespace,namespace resource,stored namespace,cluster resource,namespace collection 
 summary: Recuperar um namespace para um cluster 
 ---
 = Recuperar um namespace para um cluster
@@ -10,7 +11,20 @@ summary: Recuperar um namespace para um cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um namespace para um cluster, fornecendo os detalhes armazenados do recurso Namespace API.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Namespace armazenado no corpo da resposta JSON.
 

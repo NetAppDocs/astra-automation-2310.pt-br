@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-licenses.html 
+keywords: licenses,account licenses,license list,resource collection,license fields,account resources 
 summary: Liste todas as licenças 
 ---
 = Liste todas as licenças
@@ -10,7 +11,20 @@ summary: Liste todas as licenças
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera todas as licenças da coleção, retornando um array JSON com os recursos correspondentes. Você pode especificar campos individuais na solicitação para personalizar as informações retornadas para cada licença.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

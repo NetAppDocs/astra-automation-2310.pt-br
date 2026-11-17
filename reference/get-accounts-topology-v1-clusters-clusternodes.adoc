@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-clusternodes.html 
+keywords: cluster nodes,cluster topology,account id,cluster id,resource collection,fields requested 
 summary: Liste os nós do cluster para um cluster 
 ---
 = Liste os nós do cluster para um cluster
@@ -10,7 +11,20 @@ summary: Liste os nós do cluster para um cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os nós de cluster de um cluster. Use isso para visualizar todos os nós no cluster especificado e seus detalhes.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

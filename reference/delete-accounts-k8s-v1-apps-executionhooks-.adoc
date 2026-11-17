@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-executionhooks-.html 
+keywords: execution hook removal,delete execution hook,remove execution hook,kubernetes app,execution hook delete,execution hook actions 
 summary: Excluir um gancho de execução para um aplicativo 
 ---
 = Excluir um gancho de execução para um aplicativo
@@ -10,7 +11,20 @@ summary: Excluir um gancho de execução para um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um gancho de execução para um aplicativo, impedindo que ele seja executado em ações futuras.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de Execution Hook especificado.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-licenses-.html 
+keywords: license resource,license collection,account resource,license id,account id 
 summary: Obtenha uma licença 
 ---
 = Obtenha uma licença
@@ -10,7 +11,20 @@ summary: Obtenha uma licença
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma licença, fornecendo detalhes do recurso da API de licença armazenado. Use isso para examinar a configuração de licença atual e garantir a conformidade com os requisitos de licenciamento.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Licença armazenado no corpo da resposta JSON.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-schedules.html 
+keywords: accounts schedules,k8s schedules,app schedules,resource collection,listing collection 
 summary: Liste os horários de um aplicativo 
 ---
 = Liste os horários de um aplicativo
@@ -10,7 +11,20 @@ summary: Liste os horários de um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma lista de agendamentos para um aplicativo. Use isso para visualizar as configurações de agendamento associadas ao aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

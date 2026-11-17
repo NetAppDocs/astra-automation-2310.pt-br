@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-rolebindings.html 
+keywords: role bindings,account id,user id,collection fields,resource filtering,sort order 
 summary: Liste as associações de função para um usuário 
 ---
 = Liste as associações de função para um usuário
@@ -10,7 +11,20 @@ summary: Liste as associações de função para um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os vínculos de função de um usuário, fornecendo as informações necessárias para gerenciar as permissões do usuário de forma eficaz.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

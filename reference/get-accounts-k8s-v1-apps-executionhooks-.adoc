@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks-.html 
+keywords: execution hook,matching containers,matching images,kubernetes apps,execution criteria 
 summary: Recuperar um gancho de execução para um aplicativo 
 ---
 = Recuperar um gancho de execução para um aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um gancho de execução para um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um gancho de execução para um aplicativo. Use-o para examinar o recurso de gancho de execução armazenado e seus contêineres e imagens associados com base nos critérios atuais.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da Execution Hook API armazenado no corpo da resposta JSON. Também preenche matchingContainers e matchingImages com base no matchingCriteria atual e no app definido.
 

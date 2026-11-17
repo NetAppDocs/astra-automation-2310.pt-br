@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-subscriptions.html 
+keywords: subscription,create subscription,account subscription,account id,subscription resource 
 summary: Criar uma nova assinatura 
 ---
 = Criar uma nova assinatura
@@ -10,7 +11,20 @@ summary: Criar uma nova assinatura
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma nova assinatura, especificando os valores desejados para o recurso Subscription API. Use isso para iniciar uma assinatura com configurações personalizadas de acordo com seus requisitos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de Subscription a ser criado.
 

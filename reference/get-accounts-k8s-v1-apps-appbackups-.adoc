@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups-.html 
+keywords: application backup,kubernetes apps,account resource,app collection,stored resource 
 summary: Recuperar um backup de um aplicativo 
 ---
 = Recuperar um backup de um aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um backup de um aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um backup de um aplicativo, fornecendo as informações do recurso de backup armazenado no corpo da resposta JSON.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de backup de aplicativos armazenado no corpo da resposta JSON.
 

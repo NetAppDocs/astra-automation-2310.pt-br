@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/role_binding_endpoints.html 
+keywords: role bindings,roles,permissions,access control,user permissions,group permissions 
 summary: 'Pontos de extremidade de vinculação de função da Astra API (ACC)' 
 ---
 = Pontos de extremidade de vinculação de função da Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie as vinculações de função que concedem permissões a usuários ou grupos em uma conta. Uma vinculação de função associa um usuário ou grupo a uma função.
 
 A API de Vinculação de Funções descreve as relações entre os pares usuário-conta ou grupo-conta, juntamente com os conjuntos de permissões que lhes são concedidas (funções).

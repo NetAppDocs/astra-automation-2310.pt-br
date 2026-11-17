@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-buckets-.html 
+keywords: replace resource,bucket management,data storage,account bucket,bucket topology 
 summary: Modificar um bucket 
 ---
 = Modificar um bucket
@@ -10,7 +11,20 @@ summary: Modificar um bucket
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um bucket atualizando seu recurso armazenado com o corpo da solicitação JSON fornecido, preservando os valores-chave essenciais. Use isso para garantir que a configuração do bucket reflita suas configurações desejadas, mantendo a integridade do sistema.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

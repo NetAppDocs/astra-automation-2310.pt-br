@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets-.html 
+keywords: application asset,app asset,app backup,account resource,app asset collection 
 summary: Recuperar um recurso de aplicativo de um backup de aplicativo 
 ---
 = Recuperar um recurso de aplicativo de um backup de aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um recurso de aplicativo de um backup de aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um recurso de aplicativo de um backup de aplicativo. Use isso para acessar a configuração do recurso armazenado para fins de recuperação ou análise.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Application Asset armazenado no corpo da resposta JSON.
 

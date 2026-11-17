@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-ldapusers-.html 
+keywords: ldap users,ldap resource,account id,ldap user collection,stored ldap 
 summary: Recuperar um usuário LDAP 
 ---
 = Recuperar um usuário LDAP
@@ -10,7 +11,20 @@ summary: Recuperar um usuário LDAP
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um usuário LDAP, fornecendo a configuração de recursos armazenada para tarefas de gerenciamento de usuários e autenticação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapUsers/{ldapUser_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna um objeto JSON que representa o recurso LDAP armazenado.
 

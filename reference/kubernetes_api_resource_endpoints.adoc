@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/kubernetes_api_resource_endpoints.html 
+keywords: kubernetes api resources,supported resources,cluster resources,resource filtering,read-only api 
 summary: 'Astra API (ACC) endpoints de recursos da API do Kubernetes' 
 ---
 = Astra API (ACC) endpoints de recursos da API do Kubernetes
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Navegue pelos recursos da API do Kubernetes em um cluster para ver quais deles o Astra Control oferece suporte. Esses endpoints são somente leitura.
 
 A API de Recursos do Kubernetes fornece acesso somente leitura aos recursos da API do Kubernetes para filtrar aqueles suportados pelo Astra em um determinado cluster.

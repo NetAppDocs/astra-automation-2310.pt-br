@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/user_endpoints.html 
+keywords: astra users,user management,user accounts,user creation,user removal 
 summary: 'Pontos de extremidade do usuário da Astra API (ACC)' 
 ---
 = Pontos de extremidade do usuário da Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Gerencie os usuários que podem interagir com o Astra Control.
 
 A API de Usuário representa os usuários que podem interagir com o sistema.

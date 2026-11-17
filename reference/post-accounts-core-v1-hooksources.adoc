@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-hooksources.html 
+keywords: hook source,create resource,account id,core hook,hook values,source creation 
 summary: Crie uma nova fonte de gancho 
 ---
 = Crie uma nova fonte de gancho
@@ -10,7 +11,20 @@ summary: Crie uma nova fonte de gancho
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma nova origem de hook, especificando os valores para o recurso da API Hook Source para iniciar o processo de criação. Use este endpoint quando precisar estabelecer uma origem de hook para tarefas de automação ou integração.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API Hook Source a ser criado.
 

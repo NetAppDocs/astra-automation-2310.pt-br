@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-groups-users-.html 
+keywords: update user,replacement operation,modify resource,group user management,account resource 
 summary: Modificar um usuário para um grupo 
 ---
 = Modificar um usuário para um grupo
@@ -10,7 +11,20 @@ summary: Modificar um usuário para um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um usuário de um grupo substituindo todo o recurso armazenado pelo corpo da solicitação JSON fornecido. Use este endpoint para atualizar os detalhes do usuário, preservando os valores de chave não modificáveis.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

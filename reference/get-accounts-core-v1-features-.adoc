@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-features-.html 
+keywords: feature resource,feature collection,account id,feature id,stored feature 
 summary: Recuperar uma funcionalidade 
 ---
 = Recuperar uma funcionalidade
@@ -10,7 +11,20 @@ summary: Recuperar uma funcionalidade
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma funcionalidade, fornecendo o recurso armazenado da API Feature para fins de análise ou integração.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features/{feature_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso Feature API armazenado no corpo da resposta JSON.
 

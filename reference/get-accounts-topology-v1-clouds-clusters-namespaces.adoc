@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces.html 
+keywords: cloud topology,resource collection,namespace list,field filter,cluster resources 
 summary: Liste os namespaces de uma nuvem 
 ---
 = Liste os namespaces de uma nuvem
@@ -10,7 +11,20 @@ summary: Liste os namespaces de uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os namespaces de uma nuvem, fornecendo uma lista de todos os recursos correspondentes disponíveis na coleção.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

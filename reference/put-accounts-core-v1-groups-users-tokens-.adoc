@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-groups-users-tokens-.html 
+keywords: replace resource,account group,user token,core group,user replace,token id 
 summary: Modificar um token para um usuário em um grupo 
 ---
 = Modificar um token para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Modificar um token para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um token para um usuário em um grupo, atualizando o recurso armazenado com base no corpo da solicitação JSON fornecido.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-groups-users-rolebindings-.html 
+keywords: replace resource,role binding,group resource,user role,account resource,stored resource 
 summary: Modificar a associação de função para um usuário em um grupo 
 ---
 = Modificar a associação de função para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Modificar a associação de função para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica uma vinculação de função de um usuário em um grupo, atualizando o recurso armazenado com os detalhes fornecidos e mantendo os valores-chave que o usuário não pode modificar.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

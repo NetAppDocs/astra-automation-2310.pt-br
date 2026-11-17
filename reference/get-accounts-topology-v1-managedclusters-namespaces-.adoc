@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-namespaces-.html 
+keywords: namespace resource,managed cluster,namespaces list,stored namespace,account id 
 summary: Recuperar um namespace para um cluster gerenciado 
 ---
 = Recuperar um namespace para um cluster gerenciado
@@ -10,7 +11,20 @@ summary: Recuperar um namespace para um cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um namespace de um cluster gerenciado, fornecendo os detalhes de configuração armazenados para os recursos de namespace dentro do cluster.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API Namespace armazenado no corpo da resposta JSON.
 

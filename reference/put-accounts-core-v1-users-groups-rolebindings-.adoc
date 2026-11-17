@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: replace resource,user groups,role bindings,group roles,resource modification 
 summary: Modificar uma vinculação de função para um grupo associado a um usuário 
 ---
 = Modificar uma vinculação de função para um grupo associado a um usuário
@@ -10,7 +11,20 @@ summary: Modificar uma vinculação de função para um grupo associado a um usu
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um vínculo de função de um grupo associado a um usuário. Use isso para atualizar as permissões de acesso de grupos de usuários específicos.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

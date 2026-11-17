@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/subscription_endpoints.html 
+keywords: subscriptions,active subscriptions,account subscriptions,subscription resources,licensing 
 summary: 'Pontos de extremidade de assinatura da Astra API (ACC)' 
 ---
 = Pontos de extremidade de assinatura da Astra API (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Veja as assinaturas ativas da sua conta do Astra Control.
 
 A Subscription API fornece acesso a recursos de assinatura para representar assinaturas ativas.

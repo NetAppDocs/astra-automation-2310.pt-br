@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-executionhooks.html 
+keywords: execution hook,account resource,execution values,create execution,execution setup 
 summary: Crie um novo gancho de execução 
 ---
 = Crie um novo gancho de execução
@@ -10,7 +11,20 @@ summary: Crie um novo gancho de execução
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um novo gancho de execução, especificando os valores para o recurso da API Execution Hook. Use isso para definir tarefas de automação personalizadas para seus fluxos de trabalho.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API Execution Hook a ser criado.
 

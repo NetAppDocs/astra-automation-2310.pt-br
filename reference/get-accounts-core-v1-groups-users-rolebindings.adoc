@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role bindings,resource collection,user role,group resource,account resource 
 summary: Liste as associações de função para um usuário em um grupo 
 ---
 = Liste as associações de função para um usuário em um grupo
@@ -10,7 +11,20 @@ summary: Liste as associações de função para um usuário em um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera as associações de funções de um usuário dentro de um grupo. Use isso para visualizar as funções atribuídas a um usuário e gerenciar permissões de acesso de forma eficaz.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

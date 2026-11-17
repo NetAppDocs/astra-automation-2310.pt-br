@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-events-.html 
+keywords: stored event,account resource,event collection,response body,event id 
 summary: Recuperar um evento 
 ---
 = Recuperar um evento
@@ -10,7 +11,20 @@ summary: Recuperar um evento
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um evento e retorna o recurso de evento armazenado para fins de análise ou monitoramento.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events/{event_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de Eventos armazenado no corpo da resposta JSON.
 

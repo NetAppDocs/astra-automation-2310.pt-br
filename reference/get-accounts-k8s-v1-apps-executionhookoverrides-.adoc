@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,execution override,execution hook override,k8s apps,account resource,app resource 
 summary: Recuperar um recurso de substituição de gancho de execução 
 ---
 = Recuperar um recurso de substituição de gancho de execução
@@ -10,7 +11,20 @@ summary: Recuperar um recurso de substituição de gancho de execução
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um recurso de substituição de hook de execução, fornecendo os detalhes de configuração armazenados para fluxos de trabalho de integração e automação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso de API de substituição de gancho de execução armazenado no corpo da resposta JSON.
 

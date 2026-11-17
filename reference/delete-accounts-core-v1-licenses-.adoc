@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-licenses-.html 
+keywords: license removal,account license,license deletion,remove license,license entitlements,entitlement recalculation 
 summary: Excluir uma licença 
 ---
 = Excluir uma licença
@@ -10,7 +11,20 @@ summary: Excluir uma licença
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui uma licença específica do sistema. Use este endpoint para gerenciar seus direitos de licença de forma eficaz.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso da API de License especificado. A licença de avaliação instalada automaticamente não pode ser excluída.
 

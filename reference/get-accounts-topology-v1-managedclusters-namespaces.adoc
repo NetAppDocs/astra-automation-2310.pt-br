@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-namespaces.html 
+keywords: account topology,managed cluster,namespaces list,resource collection,field filter 
 summary: Liste os namespaces de um cluster gerenciado 
 ---
 = Liste os namespaces de um cluster gerenciado
@@ -10,7 +11,20 @@ summary: Liste os namespaces de um cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera os namespaces de um cluster gerenciado. Use esta opção para visualizar os namespaces associados ao cluster e gerenciá-los de forma eficaz.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

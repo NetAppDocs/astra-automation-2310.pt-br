@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cluster_node_endpoints.html 
+keywords: cluster nodes,kubernetes nodes,node details,node information,cluster resources 
 summary: 'Pontos de extremidade do nó de cluster da API Astra (ACC)' 
 ---
 = Pontos de extremidade do nó de cluster da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Veja os nós que pertencem a um cluster.
 
 A API de nó de cluster fornece acesso aos nós associados a um cluster.

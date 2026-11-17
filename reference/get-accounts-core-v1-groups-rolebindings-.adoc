@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings-.html 
+keywords: role binding,group role,account role,role permissions,stored role bindings 
 summary: Recuperar uma associação de função para um grupo 
 ---
 = Recuperar uma associação de função para um grupo
@@ -10,7 +11,20 @@ summary: Recuperar uma associação de função para um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera a vinculação de função de um grupo, fornecendo os detalhes da vinculação de função associada ao ID de grupo especificado. Use isso para examinar as permissões e associações configuradas para o grupo na API do Astra.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de vinculação de função armazenado no corpo da resposta JSON. Se a solicitação for para /accounts/{account_id}/core/v1/users/{user_id}/roleBindings, somente os recursos roleBinding em que o ID do usuário corresponder ao ID do usuário na URL da solicitação poderão ser lidos. Se a solicitação for para /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings, somente os recursos roleBinding em que o ID do grupo corresponder ao ID do grupo na URL da solicitação poderão ser lidos.
 

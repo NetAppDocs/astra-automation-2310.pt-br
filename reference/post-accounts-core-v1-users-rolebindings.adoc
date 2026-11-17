@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-rolebindings.html 
+keywords: role binding,create role,account role,user role,role management,assign role 
 summary: Criar uma nova associação de função para um usuário 
 ---
 = Criar uma nova associação de função para um usuário
@@ -10,7 +11,20 @@ summary: Criar uma nova associação de função para um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria uma associação de função para um usuário, especificando os valores desejados para o recurso da API de Associação de Função. Use isso para atribuir funções e permissões específicas aos usuários em seu aplicativo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de vinculação de função a ser criado.
 

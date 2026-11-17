@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: role binding,account role,group role,user role,role permissions,role access 
 summary: Recuperar uma associação de função para um grupo associado a um usuário 
 ---
 = Recuperar uma associação de função para um grupo associado a um usuário
@@ -10,7 +11,20 @@ summary: Recuperar uma associação de função para um grupo associado a um usu
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera uma vinculação de função para um grupo associado a um usuário, fornecendo detalhes da configuração da vinculação de função associada ao grupo especificado.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de vinculação de função armazenado no corpo da resposta JSON. Se a solicitação for para /accounts/{account_id}/core/v1/users/{user_id}/roleBindings, somente os recursos roleBinding em que o ID do usuário corresponder ao ID do usuário na URL da solicitação poderão ser lidos. Se a solicitação for para /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings, somente os recursos roleBinding em que o ID do grupo corresponder ao ID do grupo na URL da solicitação poderão ser lidos.
 

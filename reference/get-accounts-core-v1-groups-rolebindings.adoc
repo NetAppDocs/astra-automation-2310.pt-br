@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings.html 
+keywords: role bindings,group roles,account resources,collection filters,resource sorting 
 summary: Liste as atribuições de função para um grupo 
 ---
 = Liste as atribuições de função para um grupo
@@ -10,7 +11,20 @@ summary: Liste as atribuições de função para um grupo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera as associações de funções para um grupo, fornecendo uma lista de recursos correspondentes na coleção. Use isso para acessar informações detalhadas sobre associações de funções específicas relacionadas ao grupo.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna uma matriz JSON com todos os recursos correspondentes na coleção. Se campos individuais forem especificados na solicitação, a matriz JSON de itens conterá os campos solicitados para cada recurso correspondente na ordem especificada.
 

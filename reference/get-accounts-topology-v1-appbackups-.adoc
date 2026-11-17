@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-appbackups-.html 
+keywords: account topology,application backup,stored backup,backup resource,app backup collection 
 summary: Recuperar um backup de aplicativo 
 ---
 = Recuperar um backup de aplicativo
@@ -10,7 +11,20 @@ summary: Recuperar um backup de aplicativo
 :imagesdir: ../media/
 
 
+[role="lead"]
+Recupera um backup de aplicação, fornecendo acesso ao recurso de backup armazenado para inspeção adicional ou fins de recuperação.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Retorna o recurso da API de backup de aplicativos armazenado no corpo da resposta JSON.
 

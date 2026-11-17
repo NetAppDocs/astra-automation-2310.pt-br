@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-.html 
+keywords: remove user,delete user,delete account user,remove account user,user role bindings,user notification marks 
 summary: Excluir um usuário 
 ---
 = Excluir um usuário
@@ -10,7 +11,20 @@ summary: Excluir um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui um usuário da Astra API, removendo recursos associados, como marcas de notificação, tokens e vinculações de função.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Remove o recurso de API de usuário especificado.
 

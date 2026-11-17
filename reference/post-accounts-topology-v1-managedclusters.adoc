@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-managedclusters.html 
+keywords: managed clusters,create managed cluster,cluster topology,account cluster,cluster resource 
 summary: Criar um novo cluster gerenciado 
 ---
 = Criar um novo cluster gerenciado
@@ -10,7 +11,20 @@ summary: Criar um novo cluster gerenciado
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um cluster gerenciado, especificando os valores desejados para o recurso da API de cluster gerenciado. Use isso para configurar e implantar clusters personalizados de acordo com suas necessidades específicas.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API Managed Cluster a ser criado.
 

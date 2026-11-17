@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-clouds-.html 
+keywords: cloud instance,deletion,non-managed clusters,non-managed volumes,cloud id 
 summary: Apagar uma nuvem 
 ---
 = Apagar uma nuvem
@@ -10,7 +11,20 @@ summary: Apagar uma nuvem
 :imagesdir: ../media/
 
 
+[role="lead"]
+Exclui a instância de nuvem solicitada, juntamente com quaisquer clusters e volumes não gerenciados associados a ela. Use esta operação para remover recursos de nuvem que não são mais necessários.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-delete]#EXCLUIR# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Exclui a instância de nuvem solicitada e quaisquer clusters e volumes não gerenciados associados a essa nuvem específica.
 

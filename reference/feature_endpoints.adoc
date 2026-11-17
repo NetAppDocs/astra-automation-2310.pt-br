@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/feature_endpoints.html 
+keywords: feature flags,enabled features,disabled features,feature status,feature check 
 summary: 'Pontos de extremidade de recursos da API Astra (ACC)' 
 ---
 = Pontos de extremidade de recursos da API Astra (ACC)
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Verifique quais recursos do Astra Control estão ativados ou desativados lendo as flags de recursos.
 
 A Feature API fornece acesso somente leitura aos recursos de sinalização de funcionalidades para determinar quais funcionalidades estão habilitadas ou desabilitadas no sistema.

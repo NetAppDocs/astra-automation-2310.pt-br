@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-.html 
+keywords: replace resource,user management,account update,user collection,modify user,user replace 
 summary: Modificar um usuário 
 ---
 = Modificar um usuário
@@ -10,7 +11,20 @@ summary: Modificar um usuário
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifica um usuário substituindo todo o recurso armazenado pelo corpo da requisição JSON fornecido, preservando os valores-chave que não podem ser modificados pelo usuário. Use este endpoint para atualizar os detalhes do usuário de forma eficiente, sem afetar atributos imutáveis.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Substitui todo o recurso armazenado pelo corpo da solicitação JSON fornecida, preservando os valores-chave que não podem ser modificados pelo usuário.
 

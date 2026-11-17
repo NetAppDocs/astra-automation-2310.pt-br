@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appbackups.html 
+keywords: application backup,account resource,app resource,k8s apps,kubernetes backup 
 summary: Criar um novo backup de aplicativo para um app 
 ---
 = Criar um novo backup de aplicativo para um app
@@ -10,7 +11,20 @@ summary: Criar um novo backup de aplicativo para um app
 :imagesdir: ../media/
 
 
+[role="lead"]
+Cria um backup de um aplicativo, especificando a configuração desejada para o recurso de backup. Use isso para preservar o estado atual do seu aplicativo para recuperação ou análise futura.
+
+
+
+[[http-method-and-endpoint]]
+== Método e endpoint HTTP
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== Notas de utilização
 
 Indica os valores desejados para o recurso da API de Backup de Aplicativos a ser criado.
 
